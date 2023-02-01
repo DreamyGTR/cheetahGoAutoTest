@@ -31,7 +31,7 @@ public class cheetahGoTest {
         LoginAction.executeLogin(webDriver, Constants.UserName,Constants.PassWord);
         WaitUtil.sleep(3000);
     }
-    @Test(suiteName = "cheetahGo",groups = "login")
+    @Test(groups = "login")
     public void testLogin() throws Exception {
         AccountAction.openCustomerManagement(webDriver);
         Assert.assertTrue(webDriver.getPageSource().contains("10555"));

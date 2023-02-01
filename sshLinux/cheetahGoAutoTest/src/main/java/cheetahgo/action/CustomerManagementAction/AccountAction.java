@@ -39,6 +39,7 @@ public class AccountAction {
         accountListPageObject.customerTypeSelect().click();
         SeleniumUtil.choiceSelect(webDriver, "ant-select-dropdown-menu-item", "全部");
         accountListPageObject.selectButton().click();
-//        WaitUtil.sleep(3000);
+        WaitUtil.sleep(3000);
+
     }
 }
