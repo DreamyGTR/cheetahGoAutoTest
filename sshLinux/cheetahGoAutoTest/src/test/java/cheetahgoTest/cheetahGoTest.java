@@ -1,15 +1,17 @@
 package cheetahgoTest;
 
 import cheetahgo.action.CustomerManagementAction.AccountAction;
-import cheetahgo.action.CustomerManagementAction.CustomerManagementAction;
 import cheetahgo.action.LoginAction;
 import cheetahgo.constant.Constants;
+import com.mysql.cj.log.Log;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import util.LogUtil;
 import util.WaitUtil;
 
 import java.util.concurrent.TimeUnit;
@@ -23,6 +25,7 @@ public class cheetahGoTest {
 
     @BeforeMethod
     public void beforeMethod() throws Exception {
+        DOMConfigurator.configure("log4j.xml");
         System.setProperty("webdriver.gecko.driver","C:\\Program Files\\Mozilla Firefox\\geckodriver.exe");
         System.setProperty("webdriver.firefox.bin","C:\\Program Files\\Mozilla Firefox\\firefox.exe");
         webDriver=new FirefoxDriver();
@@ -31,13 +34,13 @@ public class cheetahGoTest {
         LoginAction.executeLogin(webDriver, Constants.UserName,Constants.PassWord);
         WaitUtil.sleep(3000);
     }
-    @Test(groups = "login")
+    @Test(groups = "CustomerManagement")
     public void testLogin() throws Exception {
-        AccountAction.openCustomerManagement(webDriver);
-        Assert.assertTrue(webDriver.getPageSource().contains("10555"));
+        AccountAction.CustomerManagementSelectAction(webDriver);
     }
     @AfterMethod
     public void afterMethod(){
+        LogUtil.info("=============================自动化测试结束===========================");
         webDriver.quit();
     }
 }

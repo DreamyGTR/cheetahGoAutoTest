@@ -14,7 +14,9 @@ public class SeleniumUtil {
      * @param elementsName 下拉框位置
      * @param text 下拉框value值
      */
-    public static void choiceSelect(WebDriver webDriver,String elementsName,String text){
+    public static void choiceSelect(WebElement element,WebDriver webDriver,String elementsName,String text){
+        element.click();
+        WaitUtil.sleep(1000);
         List<WebElement> elements = webDriver.findElements(By.className(elementsName));
         for (WebElement e:elements
         ){
@@ -23,6 +25,19 @@ public class SeleniumUtil {
                 break;
             }
         }
+    }
+
+    /**
+     * 选择下拉框内的元素
+     * @param webDriver web驱动
+     * @param elementsName 下拉框位置
+     * @param index 下拉框列表下标
+     */
+    public static void choiceSelect(WebElement element,WebDriver webDriver,String elementsName,int index){
+        element.click();
+        WaitUtil.sleep(2000);
+        List<WebElement> elements = webDriver.findElements(By.className(elementsName));
+        elements.get(index).click();
     }
     public static void actionMoveClickRelease(WebDriver webDriver,String elementsName){
         Actions action = new Actions(webDriver);

@@ -32,8 +32,6 @@ public class PropertiesMapUtil {
         //將配置对象中的定位类型存入locatorType变量,将定位表达式的值存入locatorValue变量
         String locatorType=locator.split(">")[0];
         String locatorValue=locator.split(">")[1];
-        //输出locatorType的变量值内容判断返回何种定位方式的By对象
-        log.error("获取的定位类型:"+locatorType+"\t获取的定位表达式"+locatorValue);
         //根据locatorType的变量值内容判断返回何种定位方式的By对象
         if (locatorType.toLowerCase().equals("id")){
             return By.id(locatorValue);
