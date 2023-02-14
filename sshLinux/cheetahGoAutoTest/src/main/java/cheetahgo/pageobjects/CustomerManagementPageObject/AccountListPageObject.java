@@ -5,8 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import util.PropertiesMapUtil;
 
-import java.util.List;
-
 /**
  * 内部运营平台客户管理-账号列表二级菜单页面元素封装类
  */
@@ -80,13 +78,52 @@ public class AccountListPageObject {
     }
 
     //新增客户客户名称文本框
+    public WebElement addCustomerNameInput() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.addCustomerNameInput"));
+        return element;
+    }
 
     //新增客户SAPCode文本框
+    public WebElement addCustomerSAPCodeInput() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.addCustomerSAPCodeInput"));
+        return element;
+    }
+
     //新增客户客户类型下拉框
+    public WebElement addCustomerTypeSelect() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.addCustomerTypeSelect"));
+        return element;
+    }
+
     //新增客户客户等级下拉框
+    public WebElement addCustomerLevelSelect() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.addCustomerLevelSelect"));
+        return element;
+    }
+
     //新增客户销售下拉框
+    public WebElement addCustomerSalesSelect() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.addCustomerSalesSelect"));
+        return element;
+    }
+
     //新增客户AM下拉框
+    public WebElement addCustomerAMSelect() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.addCustomerAMSelect"));
+        return element;
+    }
+
     //新增客户优化师下拉框
+    public WebElement addCustomerOptimistSelect() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.addCustomerOptimistSelect"));
+        return element;
+    }
+
+    //新增客户确认按钮
+    public WebElement addCustomerConfirmButton() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.addCustomerConfirmButton"));
+        return element;
+    }
 
     //分配销售功能按钮
     public WebElement distributeSalesButton() throws Exception {
@@ -94,16 +131,23 @@ public class AccountListPageObject {
         return element;
     }
 
+    //分配销售下拉框
+    public WebElement distributeSalesSelect() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeSalesSelect"));
+        return element;
+    }
     //分配AM功能按钮
     public WebElement distributeAMButton() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeAMButton"));
         return element;
     }
+
     //分配优化师功能按钮
     public WebElement distributeOptimistButton() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeOptimistButton"));
         return element;
     }
+
     //绑定SAP Code功能按钮
     public WebElement bindingSAPCodeButton() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.bindingSAPCodeButton"));
@@ -116,5 +160,44 @@ public class AccountListPageObject {
         return element;
     }
 
+    //查看财务信息
+    public WebElement selectFinancialInformation() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.selectFinancialInformation"));
+        return element;
+    }
 
+    //查看联系人信息
+    public WebElement selectContactInformation() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.selectContactInformation"));
+        return element;
+    }
+
+    //编辑客户信息
+    public WebElement editCustomerInformation() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.editCustomerInformation"));
+        return element;
+    }
+
+    //编辑财务信息
+    public WebElement editFinancialInformation() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.editFinancialInformation"));
+        return element;
+    }
+
+    //编辑联系人信息
+    public WebElement editContactInformation() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.editContactInformation"));
+        return element;
+    }
+
+    //客户列表单选框
+    public WebElement customerListChoice() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.customerListChoice"));
+        return element;
+    }
+    //客户列表更新时间链接
+    public WebElement updateTimeLink() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.updateTimeLink"));
+        return element;
+    }
 }

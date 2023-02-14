@@ -3,11 +3,9 @@ package cheetahgoTest;
 import cheetahgo.action.CustomerManagementAction.AccountAction;
 import cheetahgo.action.LoginAction;
 import cheetahgo.constant.Constants;
-import com.mysql.cj.log.Log;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -34,9 +32,13 @@ public class cheetahGoTest {
         LoginAction.executeLogin(webDriver, Constants.UserName,Constants.PassWord);
         WaitUtil.sleep(3000);
     }
+//    @Test(groups = "CustomerManagement")
+//    public void testSelect() throws Exception {
+//        AccountAction.CustomerManagementSelectActi  on(webDriver);
+//    }
     @Test(groups = "CustomerManagement")
-    public void testLogin() throws Exception {
-        AccountAction.CustomerManagementSelectAction(webDriver);
+    public void addCustomer() throws Exception {
+        AccountAction.CustomerManagementAddCustomerMessageAction(webDriver);
     }
     @AfterMethod
     public void afterMethod(){
