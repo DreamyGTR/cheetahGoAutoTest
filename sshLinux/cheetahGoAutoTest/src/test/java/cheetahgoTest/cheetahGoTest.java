@@ -34,7 +34,7 @@ public class cheetahGoTest {
     }
 //    @Test(groups = "CustomerManagement")
 //    public void testSelect() throws Exception {
-//        AccountAction.CustomerManagementSelectActi  on(webDriver);
+//        AccountAction.CustomerManagementSelectAction(webDriver);
 //    }
     @Test(groups = "CustomerManagement")
     public void addCustomer() throws Exception {
