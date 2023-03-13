@@ -93,10 +93,13 @@ public class AccountAction {
         CustomerManagementPageObject customerManagementPageObject = new CustomerManagementPageObject(webDriver);
         AccountListPageObject accountListPageObject = new AccountListPageObject(webDriver);
         customerManagementPageObject.customerManagement().click();
+        WaitUtil.sleep(1000);
+        customerManagementPageObject.customerList().click();
         LogUtil.info("=============================自动化测试开始===========================");
         log.info(webDriver.getWindowHandle());
         accountListPageObject.addCustomerButton().click();
         log.info(webDriver.getWindowHandle());
+        WaitUtil.sleep(2000);
         accountListPageObject.addCustomerNameInput().sendKeys("自动化测试输入客户名称");
         WaitUtil.sleep(3000);
         accountListPageObject.addCustomerSAPCodeInput().sendKeys("123456");

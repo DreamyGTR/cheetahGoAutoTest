@@ -24,12 +24,12 @@ public class cheetahGoTest {
     @BeforeMethod
     public void beforeMethod() throws Exception {
         DOMConfigurator.configure("log4j.xml");
-        System.setProperty("webdriver.gecko.driver","C:\\Program Files\\Mozilla Firefox\\geckodriver.exe");
-        System.setProperty("webdriver.firefox.bin","C:\\Program Files\\Mozilla Firefox\\firefox.exe");
-        webDriver=new FirefoxDriver();
+        System.setProperty("webdriver.gecko.driver", "C:\\Program Files\\Mozilla Firefox\\geckodriver.exe");
+        System.setProperty("webdriver.firefox.bin", "C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+        webDriver = new FirefoxDriver();
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        LoginAction.executeLogin(webDriver, Constants.UserName,Constants.PassWord);
+        LoginAction.executeLogin(webDriver, Constants.UserName, Constants.PassWord);
         WaitUtil.sleep(3000);
     }
 //    @Test(groups = "CustomerManagement")
@@ -40,9 +40,9 @@ public class cheetahGoTest {
     public void addCustomer() throws Exception {
         AccountAction.CustomerManagementAddCustomerMessageAction(webDriver);
     }
-    @AfterMethod
-    public void afterMethod(){
-        LogUtil.info("=============================自动化测试结束===========================");
-        webDriver.quit();
+        @AfterMethod
+        public void afterMethod () {
+            LogUtil.info("=============================自动化测试结束===========================");
+            webDriver.quit();
+        }
     }
-}

@@ -15,10 +15,10 @@ public class Constants {
     //定义在Excel文件中包含测试数据的Sheet名称
     public static final String TestDataExcelFileSheet="新建测试用例";
     //登录页面Properties文件路径
-    public static final String LoginPageProperties="D:\\sshLinux\\testSelenium-01\\src\\main\\resources\\cheetahGo.properties";
+    public static final String LoginPageProperties="D:\\gitTest\\cheetahGoAutoTest\\sshLinux\\cheetahGoAutoTest\\src\\main\\resources\\cheetahgo\\LoginPage.properties";
     //内部运营平台-客户管理页面Properties文件路径
-    public static final String CustomerManagementPageProperties="D:\\sshLinux\\cheetahGoAutoTest\\src\\main\\resources\\cheetahgo\\CustomerManagementPageObject.properties";
+    public static final String CustomerManagementPageProperties="D:\\gitTest\\cheetahGoAutoTest\\sshLinux\\cheetahGoAutoTest\\src\\main\\resources\\cheetahgo\\CustomerManagementPageObject.properties";
     //内部运营平台-客户管理-账户列表Properties文件路径
-    public static final String AccountListPageProperties="D:\\sshLinux\\cheetahGoAutoTest\\src\\main\\resources\\cheetahgo\\AccountListPageObject.properties";
+    public static final String AccountListPageProperties="D:\\gitTest\\cheetahGoAutoTest\\sshLinux\\cheetahGoAutoTest\\src\\main\\resources\\cheetahgo\\AccountListPageObject.properties";
 
 }
