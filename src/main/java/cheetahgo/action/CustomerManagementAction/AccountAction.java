@@ -3,11 +3,20 @@ package cheetahgo.action.CustomerManagementAction;
 import cheetahgo.pageobjects.CustomerManagementPageObject.AccountListPageObject;
 import cheetahgo.pageobjects.CustomerManagementPageObject.CustomerManagementPageObject;
 import lombok.extern.log4j.Log4j;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import util.KeyBoardUtil;
 import util.LogUtil;
 import util.SeleniumUtil;
 import util.WaitUtil;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * 内部运营平台-客户管理-账户列表页面
@@ -61,7 +70,7 @@ public class AccountAction {
         SeleniumUtil.choiceSelect(accountListPageObject.customerLevelSelect(), webDriver, "ant-select-dropdown-menu-item", "全部");
         accountListPageObject.selectButton().click();
         WaitUtil.sleep(2000);
-        SeleniumUtil.choiceSelect   (accountListPageObject.customerSalesSelect(), webDriver, "ant-select-dropdown-menu-item", "尤嘉维 <youjiawei@cmcm.com>");
+        SeleniumUtil.choiceSelect(accountListPageObject.customerSalesSelect(), webDriver, "ant-select-dropdown-menu-item", "尤嘉维 <youjiawei@cmcm.com>");
         WaitUtil.sleep(1000);
         accountListPageObject.selectButton().click();
         WaitUtil.sleep(1000);
@@ -86,6 +95,7 @@ public class AccountAction {
 
     /**
      * 客户管理-新增客户信息场景UI自动化测试
+     *
      * @param webDriver
      * @throws Exception
      */
@@ -93,22 +103,20 @@ public class AccountAction {
         CustomerManagementPageObject customerManagementPageObject = new CustomerManagementPageObject(webDriver);
         AccountListPageObject accountListPageObject = new AccountListPageObject(webDriver);
         customerManagementPageObject.customerManagement().click();
-        WaitUtil.sleep(1000);
         customerManagementPageObject.customerList().click();
         LogUtil.info("=============================自动化测试开始===========================");
         log.info(webDriver.getWindowHandle());
         accountListPageObject.addCustomerButton().click();
-        log.info(webDriver.getWindowHandle());
-        WaitUtil.sleep(2000);
-        accountListPageObject.addCustomerNameInput().sendKeys("自动化测试输入客户名称");
-        WaitUtil.sleep(3000);
-        accountListPageObject.addCustomerSAPCodeInput().sendKeys("123456");
-        SeleniumUtil.choiceSelect(accountListPageObject.addCustomerTypeSelect(),webDriver,"ant-select-dropdown-menu-item","直客-游戏");
-        SeleniumUtil.choiceSelect(accountListPageObject.addCustomerLevelSelect(),webDriver,"ant-select-dropdown-menu-item","Tier3 普通");
-        SeleniumUtil.choiceSelect(accountListPageObject.addCustomerSalesSelect(),webDriver,"ant-select-dropdown-menu-item","李薇薇<liweiwei@cmcm.com>");
-        SeleniumUtil.choiceSelect(accountListPageObject.addCustomerAMSelect(),webDriver,"ant-select-dropdown-menu-item","韩玮瑶<hanweiyao@cmcm.com>");
-        SeleniumUtil.choiceSelect(accountListPageObject.addCustomerOptimistSelect(),webDriver,"ant-select-dropdown-menu-item","刘旭达<liuxuda@cmcm.com>");
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        SeleniumUtil.actionMoveClickRelease(webDriver, accountListPageObject.addCustomerNameInput());
+        KeyBoardUtil.setAndctrlVClipboarData("自动化测试输入客户名称");
+        SeleniumUtil.choiceSelect(accountListPageObject.addCustomerTypeSelect(), webDriver, "ant-select-dropdown-menu-item", "直客-游戏");
+        SeleniumUtil.choiceSelect(accountListPageObject.addCustomerLevelSelect(), webDriver, "ant-select-dropdown-menu-item", "Tier3 普通");
+        SeleniumUtil.choiceSelect(accountListPageObject.addCustomerSalesSelect(), webDriver, "ant-select-dropdown-menu-item", "李薇薇<liweiwei@cmcm.com>");
+        SeleniumUtil.choiceSelect(accountListPageObject.addCustomerAMSelect(), webDriver, "ant-select-dropdown-menu-item", "韩玮瑶<hanweiyao@cmcm.com>");
+        SeleniumUtil.choiceSelect(accountListPageObject.addCustomerOptimistSelect(), webDriver, "ant-select-dropdown-menu-item", "刘旭达<liuxuda@cmcm.com>");
         accountListPageObject.addCustomerConfirmButton().click();
-        WaitUtil.sleep(3000);
+        WaitUtil.sleep(1000);
+
     }
 }

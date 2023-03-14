@@ -39,6 +39,12 @@ public class SeleniumUtil {
         List<WebElement> elements = webDriver.findElements(By.className(elementsName));
         elements.get(index).click();
     }
+
+    /**
+     * 模拟鼠标点击事件
+     * @param webDriver
+     * @param elementsName
+     */
     public static void actionMoveClickRelease(WebDriver webDriver,String elementsName){
         Actions action = new Actions(webDriver);
         WebElement element=webDriver.findElement(By.xpath(elementsName));
@@ -48,5 +54,18 @@ public class SeleniumUtil {
         WaitUtil.sleep(1000);
         action.release().perform();
         WaitUtil.sleep(1000);
+    }
+
+    /**
+     * 模拟鼠标点击事件(重写)
+     * @param webDriver
+     * @param elementsName
+     */
+    public static void actionMoveClickRelease(WebDriver webDriver,WebElement elementsName){
+        Actions action = new Actions(webDriver);
+        action.moveToElement(elementsName).perform();
+        action.clickAndHold().perform();
+        action.release().perform();
+        WaitUtil.sleep(500);
     }
 }
