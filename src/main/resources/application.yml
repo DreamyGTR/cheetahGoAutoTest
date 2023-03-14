@@ -1,0 +1,8 @@
+# 数据库数据源
+spring:
+  datasource:
+    username: root
+    password: 123456
+    # 假如时区报错了，就增加一个时区的配置就行了， serverTimezone=UTC
+    url: jdbc:mysql://10.60.81.66/can_cheetahgo_admin?useSSL=false&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver

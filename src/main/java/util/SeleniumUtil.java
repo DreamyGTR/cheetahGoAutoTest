@@ -10,17 +10,18 @@ import java.util.List;
 public class SeleniumUtil {
     /**
      * 选择下拉框内的元素
-     * @param webDriver web驱动
+     *
+     * @param webDriver    web驱动
      * @param elementsName 下拉框位置
-     * @param text 下拉框value值
+     * @param text         下拉框value值
      */
-    public static void choiceSelect(WebElement element,WebDriver webDriver,String elementsName,String text){
+    public static void choiceSelect(WebElement element, WebDriver webDriver, String elementsName, String text) {
         element.click();
         WaitUtil.sleep(1000);
         List<WebElement> elements = webDriver.findElements(By.className(elementsName));
-        for (WebElement e:elements
-        ){
-            if (e.getText().equals(text)){
+        for (WebElement e : elements
+        ) {
+            if (e.getText().equals(text)) {
                 e.click();
                 break;
             }
@@ -29,11 +30,12 @@ public class SeleniumUtil {
 
     /**
      * 选择下拉框内的元素
-     * @param webDriver web驱动
+     *
+     * @param webDriver    web驱动
      * @param elementsName 下拉框位置
-     * @param index 下拉框列表下标
+     * @param index        下拉框列表下标
      */
-    public static void choiceSelect(WebElement element,WebDriver webDriver,String elementsName,int index){
+    public static void choiceSelect(WebElement element, WebDriver webDriver, String elementsName, int index) {
         element.click();
         WaitUtil.sleep(2000);
         List<WebElement> elements = webDriver.findElements(By.className(elementsName));
@@ -42,12 +44,13 @@ public class SeleniumUtil {
 
     /**
      * 模拟鼠标点击事件
+     *
      * @param webDriver
      * @param elementsName
      */
-    public static void actionMoveClickRelease(WebDriver webDriver,String elementsName){
+    public static void actionMoveClickRelease(WebDriver webDriver, String elementsName) {
         Actions action = new Actions(webDriver);
-        WebElement element=webDriver.findElement(By.xpath(elementsName));
+        WebElement element = webDriver.findElement(By.xpath(elementsName));
         action.moveToElement(element).perform();
         WaitUtil.sleep(1000);
         action.clickAndHold().perform();
@@ -58,14 +61,26 @@ public class SeleniumUtil {
 
     /**
      * 模拟鼠标点击事件(重写)
+     *
      * @param webDriver
      * @param elementsName
      */
-    public static void actionMoveClickRelease(WebDriver webDriver,WebElement elementsName){
+    public static void actionMoveClickRelease(WebDriver webDriver, WebElement elementsName) {
         Actions action = new Actions(webDriver);
         action.moveToElement(elementsName).perform();
         action.clickAndHold().perform();
         action.release().perform();
         WaitUtil.sleep(500);
+    }
+
+    /**
+     * 该方法为解决外层DIV遮盖元素导致无法输入参数的问题
+     * @param webDriver
+     * @param webElement
+     * @param str
+     */
+    public static void coverDivInputSendKeys(WebDriver webDriver, WebElement webElement, String str) {
+        actionMoveClickRelease(webDriver,webElement);
+        KeyBoardUtil.setAndctrlVClipboarData(str);
     }
 }

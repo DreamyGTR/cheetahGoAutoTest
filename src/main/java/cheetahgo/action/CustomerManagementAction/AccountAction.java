@@ -108,8 +108,8 @@ public class AccountAction {
         log.info(webDriver.getWindowHandle());
         accountListPageObject.addCustomerButton().click();
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        SeleniumUtil.actionMoveClickRelease(webDriver, accountListPageObject.addCustomerNameInput());
-        KeyBoardUtil.setAndctrlVClipboarData("自动化测试输入客户名称");
+        SeleniumUtil.coverDivInputSendKeys(webDriver, accountListPageObject.addCustomerNameInput(), "自动化测试输入客户名称");
+        SeleniumUtil.coverDivInputSendKeys(webDriver, accountListPageObject.addCustomerSAPCodeInput(), "123456");
         SeleniumUtil.choiceSelect(accountListPageObject.addCustomerTypeSelect(), webDriver, "ant-select-dropdown-menu-item", "直客-游戏");
         SeleniumUtil.choiceSelect(accountListPageObject.addCustomerLevelSelect(), webDriver, "ant-select-dropdown-menu-item", "Tier3 普通");
         SeleniumUtil.choiceSelect(accountListPageObject.addCustomerSalesSelect(), webDriver, "ant-select-dropdown-menu-item", "李薇薇<liweiwei@cmcm.com>");
@@ -117,6 +117,5 @@ public class AccountAction {
         SeleniumUtil.choiceSelect(accountListPageObject.addCustomerOptimistSelect(), webDriver, "ant-select-dropdown-menu-item", "刘旭达<liuxuda@cmcm.com>");
         accountListPageObject.addCustomerConfirmButton().click();
         WaitUtil.sleep(1000);
-
     }
 }
