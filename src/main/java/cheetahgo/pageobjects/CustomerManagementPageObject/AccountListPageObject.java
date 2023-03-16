@@ -125,6 +125,36 @@ public class AccountListPageObject {
         return element;
     }
 
+    //新增客户联系人姓名
+    public WebElement addCustomerContactName() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.addCustomerContactName"));
+        return element;
+    }
+
+    //新增客户联系人手机号
+    public WebElement addCustomerContactPhone() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.addCustomerContactPhone"));
+        return element;
+    }
+
+    //新增客户联系人Email
+    public WebElement addCustomerContactEmail() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.addCustomerContactEmail"));
+        return element;
+    }
+
+    //新增客户上一步按钮
+    public WebElement addCustomerBackButton() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.addCustomerBackButton"));
+        return element;
+    }
+
+    //新增客户确认按钮
+    public WebElement addCustomerContactConfirmButton() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.addCustomerContactConfirmButton"));
+        return element;
+    }
+
     //分配销售功能按钮
     public WebElement distributeSalesButton() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeSalesButton"));
@@ -136,6 +166,7 @@ public class AccountListPageObject {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeSalesSelect"));
         return element;
     }
+
     //分配AM功能按钮
     public WebElement distributeAMButton() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeAMButton"));
@@ -195,6 +226,7 @@ public class AccountListPageObject {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.customerListChoice"));
         return element;
     }
+
     //客户列表更新时间链接
     public WebElement updateTimeLink() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.updateTimeLink"));

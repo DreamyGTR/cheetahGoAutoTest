@@ -3,27 +3,18 @@ package cheetahgo.action.CustomerManagementAction;
 import cheetahgo.pageobjects.CustomerManagementPageObject.AccountListPageObject;
 import cheetahgo.pageobjects.CustomerManagementPageObject.CustomerManagementPageObject;
 import lombok.extern.log4j.Log4j;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import util.KeyBoardUtil;
 import util.LogUtil;
 import util.SeleniumUtil;
 import util.WaitUtil;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * 内部运营平台-客户管理-账户列表页面
  */
 @Log4j
 public class AccountAction {
-    /**
+        /**
      * 客户管理-客户列表筛选器功能UI自动化场景测试
      *
      * @param webDriver
@@ -107,7 +98,7 @@ public class AccountAction {
         LogUtil.info("=============================自动化测试开始===========================");
         log.info(webDriver.getWindowHandle());
         accountListPageObject.addCustomerButton().click();
-        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Thread.sleep(1500);
         SeleniumUtil.coverDivInputSendKeys(webDriver, accountListPageObject.addCustomerNameInput(), "自动化测试输入客户名称");
         SeleniumUtil.coverDivInputSendKeys(webDriver, accountListPageObject.addCustomerSAPCodeInput(), "123456");
         SeleniumUtil.choiceSelect(accountListPageObject.addCustomerTypeSelect(), webDriver, "ant-select-dropdown-menu-item", "直客-游戏");
@@ -117,5 +108,10 @@ public class AccountAction {
         SeleniumUtil.choiceSelect(accountListPageObject.addCustomerOptimistSelect(), webDriver, "ant-select-dropdown-menu-item", "刘旭达<liuxuda@cmcm.com>");
         accountListPageObject.addCustomerConfirmButton().click();
         WaitUtil.sleep(1000);
+        SeleniumUtil.coverDivInputSendKeys(webDriver,accountListPageObject.addCustomerContactName(),"赵天宇");
+        SeleniumUtil.coverDivInputSendKeys(webDriver,accountListPageObject.addCustomerContactPhone(),"13901396665");
+        SeleniumUtil.coverDivInputSendKeys(webDriver,accountListPageObject.addCustomerContactEmail(),"zhaotianyu19940411@163.com");
+        accountListPageObject.addCustomerContactConfirmButton().click();
+        WaitUtil.sleep(2000);
     }
 }

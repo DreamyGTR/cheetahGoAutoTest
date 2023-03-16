@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <suite name="cheetahGo">
-    <test name="test">
+    <test name="groupsTest">
+        <groups>
+            <run>
+                <include name="CustomerManagement"/>
+            </run>
+        </groups>
         <classes>
             <class name="cheetahgoTest.cheetahGoTest">
             </class>
         </classes>
     </test>
     <listeners>
-        <listener class-name="util.ExtentTestNGIReporterListener" />
+        <listener class-name="util.ExtentTestNGIReporterListener"/>
     </listeners>
 </suite>
