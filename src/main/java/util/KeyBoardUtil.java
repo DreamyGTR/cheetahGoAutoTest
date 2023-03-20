@@ -13,12 +13,12 @@ public class KeyBoardUtil {
         }catch (AWTException e){
             e.printStackTrace();
         }
-        //调用keyPress方法来实现按下Tab键
+    //调用keyPress方法来实现按下Tab键
         robot.keyPress(KeyEvent.VK_TAB);
         robot.keyPress((KeyEvent.VK_TAB));
-        //调用keyRelease方法来实现释放Tab键
+    //调用keyRelease方法来实现释放Tab键
         robot.keyRelease(KeyEvent.VK_TAB);
-    }
+}
     //按Enter键的封装方法
     public static void pressEnterKey(){
         Robot robot=null;

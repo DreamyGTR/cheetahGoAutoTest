@@ -14,7 +14,6 @@ import java.util.Properties;
  */
 public class PropertiesMapUtil {
     public Properties properties;
-
     public PropertiesMapUtil(String propFile) {
         properties = new Properties();
         try {
@@ -26,6 +25,13 @@ public class PropertiesMapUtil {
             e.printStackTrace();
         }
     }
+
+    /**
+     * 获取定位类型
+     * @param ElementNameInpropFile
+     * @return
+     * @throws Exception
+     */
     public By getLocator(String ElementNameInpropFile) throws Exception {
         //根据变量ElementNameInpropFile,从属性配置文件中读取对应的配置对象
         String locator=properties.getProperty(ElementNameInpropFile);

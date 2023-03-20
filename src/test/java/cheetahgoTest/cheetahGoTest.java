@@ -46,6 +46,9 @@ public class cheetahGoTest extends AbstractTestNGSpringContextTests {
     @Test(groups = "CustomerManagement")
     public void testSelect() throws Exception {
         AccountAction.CustomerManagementSelectAction(webDriver);
+        String str1="abcdefasdasdqwedsweqsdwesa";
+        String str2="cdef";
+        str1.contains(str2);
     }
 
     @Test(groups = "CustomerManagement")

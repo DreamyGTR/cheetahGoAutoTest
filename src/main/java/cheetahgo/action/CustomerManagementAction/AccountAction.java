@@ -28,7 +28,9 @@ public class AccountAction {
         WaitUtil.sleep(1000);
         accountListPageObject.customerId().sendKeys("10555");
         LogUtil.info("客户ID文本框输入10555");
+        accountListPageObject.selectButton().click();
         WaitUtil.sleep(1000);
+        SeleniumUtil.choiceSelect(accountListPageObject.uniteSelect(),webDriver,"ant-select-dropdown-menu-item","广州棒谷网络科技有限公司");
         accountListPageObject.selectButton().click();
         LogUtil.info("点击搜索按钮");
         Assert.assertTrue(webDriver.getPageSource().contains("10555"));

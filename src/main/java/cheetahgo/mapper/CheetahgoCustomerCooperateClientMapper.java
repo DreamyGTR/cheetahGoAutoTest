@@ -1,5 +1,7 @@
 package cheetahgo.mapper;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import cheetahgo.entity.CheetahgoCustomerCooperateClient;
@@ -11,6 +13,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2023-03-16 11:04:25
 * @Entity cheetahgo.entity.CheetahgoCustomerCooperateClient
 */
+@Mapper
 public interface CheetahgoCustomerCooperateClientMapper extends BaseMapper<CheetahgoCustomerCooperateClient> {
     int insertSelective(CheetahgoCustomerCooperateClient cheetahgoCustomerCooperateClient);
 

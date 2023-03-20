@@ -29,6 +29,12 @@ public class AccountListPageObject {
         return element;
     }
 
+    //联合搜索下拉列表
+    public WebElement uniteSelect() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.uniteSelect"));
+        return element;
+    }
+
     //SAP客户名称下拉筛选框
     public WebElement customerNameSelect() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.customerNameSelect"));

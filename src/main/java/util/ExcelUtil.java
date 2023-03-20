@@ -36,7 +36,6 @@ public class ExcelUtil {
             e.printStackTrace();
         }
     }
-
     //读取Excel文件指定单元格的函数
     public static String getCellData(int RowNum,int ColNum){
         try{

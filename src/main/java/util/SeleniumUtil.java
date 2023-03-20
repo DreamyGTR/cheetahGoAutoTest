@@ -1,10 +1,12 @@
 package util;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.springframework.util.FileCopyUtils;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 public class SeleniumUtil {
@@ -75,12 +77,38 @@ public class SeleniumUtil {
 
     /**
      * 该方法为解决外层DIV遮盖元素导致无法输入参数的问题
+     *
      * @param webDriver
      * @param webElement
      * @param str
      */
     public static void coverDivInputSendKeys(WebDriver webDriver, WebElement webElement, String str) {
-        actionMoveClickRelease(webDriver,webElement);
+        actionMoveClickRelease(webDriver, webElement);
         KeyBoardUtil.setAndctrlVClipboarData(str);
+    }
+
+    /**
+     * 截图方法,该方法调用了实践类和文件操作类的静态方法,用来一时间格式生成目录名称和截图文件名称
+     */
+    public void takeTakesScreenshot(WebDriver driver) {
+        try {
+            //生成日期对象
+            Date date = new Date();
+            //调用DateUtil类中的方法,生成截图所在的文件夹的名称
+            String picDir = "d:\\" + String.valueOf(DateUtil.getYear(date)) + "-"
+                    + String.valueOf(DateUtil.getMonth(date) + "-" + String.valueOf(DateUtil.getDay(date)));
+            if (!new File(picDir).exists()) {
+                FileUtil.createDir(picDir);
+            }
+            //调用DateUtil类中的方法,生成截图文件名称
+            String filePath = picDir + "\\" + String.valueOf(DateUtil.getHour(new Date())) + "-" + String.valueOf(DateUtil.getMinute(new
+                    Date())) + "-" + String.valueOf(DateUtil.getSecond(new Date())) + ".png";
+            //进行截图,并将文件内容保持存在srcFile对象中
+            File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            //将截图文件内容写入到磁盘中,生成截图文件
+            FileCopyUtils.copy(srcFile, new File(filePath));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
