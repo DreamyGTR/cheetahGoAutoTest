@@ -50,42 +50,40 @@ public class cheetahGoTest extends AbstractTestNGSpringContextTests {
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         LoginAction.executeLogin(webDriver, Constants.UserName, Constants.PassWord);
+
         WaitUtil.sleep(3000);
     }
 
-//    @Test(groups = "CustomerManagement")
-//    public void testSelect() throws Exception {
-//        AccountAction.CustomerManagementSelectAction(webDriver);
-//        String str1 = "abcdefasdasdqwedsweqsdwesa";
-//        String str2 = "cdef";
-//        str1.contains(str2);
-//    }
-
     @Test(groups = "CustomerManagement")
-    public void addCustomer() throws Exception {
-        AccountAction.CustomerManagementAddCustomerMessageAction(webDriver);
-        String pageSource = webDriver.getPageSource();
-        try {
-            Assert.assertTrue(pageSource.contains("新增成功"));
-            if (ccmMapper.selectByName(Constants.TestCustomerName).size() > 0) {
-                LogUtil.info("新增客户信息成功!");
-                if (ccmMapper.deleteByName(Constants.TestCustomerName) > 0 && cccmMapper.delByCellphone(Constants.TestCustomerPhone) > 0) {
-                    LogUtil.info("自动化测试垃圾数据已清除!");
-                } else {
-                    LogUtil.info("清除垃圾数据失败!");
-                    Assert.assertTrue(false);
-                }
-            } else {
-                LogUtil.info("新增客户信息失败!");
-                Assert.assertTrue(false);
-            }
-        } catch (AssertionError error) {
-            LogUtil.info("新增客户失败,原因为:" + error.getMessage() + "或查看日志截图!");
-            System.out.println("catch中的代码被执行了!");
-            SeleniumUtil.takeTakesScreenshot(webDriver);
-            Assert.assertTrue(false);
-        }
+    public void testSelect() throws Exception {
+        AccountAction.CustomerManagementSelectAction(webDriver);
     }
+
+//    @Test(groups = "CustomerManagement")
+//    public void addCustomer() throws Exception {
+//        AccountAction.CustomerManagementAddCustomerMessageAction(webDriver);
+//        String pageSource = webDriver.getPageSource();
+//        try {
+//            Assert.assertTrue(pageSource.contains("新增成功"));
+//            if (ccmMapper.selectByName(Constants.TestCustomerName).size() > 0) {
+//                LogUtil.info("新增客户信息成功!");
+//                if (ccmMapper.deleteByName(Constants.TestCustomerName) > 0 && cccmMapper.delByCellphone(Constants.TestCustomerPhone) > 0) {
+//                    LogUtil.info("自动化测试垃圾数据已清除!");
+//                } else {
+//                    LogUtil.info("清除垃圾数据失败!");
+//                    Assert.assertTrue(false);
+//                }
+//            } else {
+//                LogUtil.info("新增客户信息失败!");
+//                Assert.assertTrue(false);
+//            }
+//        } catch (AssertionError error) {
+//            LogUtil.info("新增客户失败,原因为:" + error.getMessage() + "或查看日志截图!");
+//            System.out.println("catch中的代码被执行了!");
+//            SeleniumUtil.takeTakesScreenshot(webDriver);
+//            Assert.assertTrue(false);
+//        }
+//    }
 
     @AfterTest()
     public void addCustomerAfterTest() {

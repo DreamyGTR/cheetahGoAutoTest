@@ -1,182 +1,29 @@
-2023-03-21 16:04:43,585 INFO  [LogUtil] ==========================内部运营平台客户管理-客户列表-新增客户功能自动化测试开始========================== 
-2023-03-21 16:04:43,591 INFO  [AccountAction] 4f4bcf68-5778-46f3-9f19-1213705d2c4d 
-2023-03-21 16:04:45,535 INFO  [LogUtil] 客户名称文本框输入:自动化测试输入客户名称 
-2023-03-21 16:04:46,652 INFO  [LogUtil] SAP Code文本框输入:123456 
-2023-03-21 16:04:47,343 INFO  [LogUtil] 客户类型下拉框选择:直客-游戏 
-2023-03-21 16:04:48,917 INFO  [LogUtil] 客户等级下拉框选择:Tier3 普通 
-2023-03-21 16:04:50,540 INFO  [LogUtil] 销售下拉框选择:李薇薇<liweiwei@cmcm.com> 
-2023-03-21 16:04:52,297 INFO  [LogUtil] AM下拉框选择:韩玮瑶<hanweiyao@cmcm.com> 
-2023-03-21 16:04:54,142 INFO  [LogUtil] 优化师下拉框选择:刘旭达<liuxuda@cmcm.com> 
-2023-03-21 16:04:55,969 INFO  [LogUtil] 点击下一步按钮 
-2023-03-21 16:04:57,364 INFO  [LogUtil] 联系人姓名文本框输入:赵天宇 
-2023-03-21 16:04:57,383 INFO  [LogUtil] =============================自动化测试结束=========================== 
-2023-03-21 16:06:42,402 INFO  [LogUtil] ==========================内部运营平台客户管理-客户列表-新增客户功能自动化测试开始========================== 
-2023-03-21 16:06:42,407 INFO  [AccountAction] 5cc3e3b2-1449-498d-bec0-37fad1aa9354 
-2023-03-21 16:06:44,389 INFO  [LogUtil] 客户名称文本框输入:自动化测试输入客户名称 
-2023-03-21 16:06:45,552 INFO  [LogUtil] SAP Code文本框输入:123456 
-2023-03-21 16:06:46,298 INFO  [LogUtil] 客户类型下拉框选择:直客-游戏 
-2023-03-21 16:06:47,907 INFO  [LogUtil] 客户等级下拉框选择:Tier3 普通 
-2023-03-21 16:06:49,499 INFO  [LogUtil] 销售下拉框选择:李薇薇<liweiwei@cmcm.com> 
-2023-03-21 16:06:51,179 INFO  [LogUtil] AM下拉框选择:韩玮瑶<hanweiyao@cmcm.com> 
-2023-03-21 16:06:52,951 INFO  [LogUtil] 优化师下拉框选择:刘旭达<liuxuda@cmcm.com> 
-2023-03-21 16:06:54,786 INFO  [LogUtil] 点击下一步按钮 
-2023-03-21 16:06:57,201 INFO  [LogUtil] 联系人姓名文本框输入:赵天宇 
-2023-03-21 16:06:57,239 INFO  [LogUtil] =============================自动化测试结束=========================== 
-2023-03-21 16:10:34,920 INFO  [LogUtil] ==========================内部运营平台客户管理-客户列表-新增客户功能自动化测试开始========================== 
-2023-03-21 16:10:34,927 INFO  [AccountAction] d5605050-b60d-4d5d-a8af-127f3a7bdccc 
-2023-03-21 16:10:36,926 INFO  [LogUtil] 客户名称文本框输入:自动化测试输入客户名称 
-2023-03-21 16:10:37,880 INFO  [LogUtil] SAP Code文本框输入:123456 
-2023-03-21 16:10:38,605 INFO  [LogUtil] 客户类型下拉框选择:直客-游戏 
-2023-03-21 16:10:40,157 INFO  [LogUtil] 客户等级下拉框选择:Tier3 普通 
-2023-03-21 16:10:41,731 INFO  [LogUtil] 销售下拉框选择:李薇薇<liweiwei@cmcm.com> 
-2023-03-21 16:10:43,421 INFO  [LogUtil] AM下拉框选择:韩玮瑶<hanweiyao@cmcm.com> 
-2023-03-21 16:10:45,213 INFO  [LogUtil] 优化师下拉框选择:刘旭达<liuxuda@cmcm.com> 
-2023-03-21 16:10:47,064 INFO  [LogUtil] 点击下一步按钮 
-2023-03-21 16:10:49,463 INFO  [LogUtil] 联系人姓名文本框输入:赵天宇 
-2023-03-21 16:10:49,478 INFO  [LogUtil] =============================自动化测试结束=========================== 
-2023-03-21 16:13:02,534 INFO  [LogUtil] ==========================内部运营平台客户管理-客户列表-新增客户功能自动化测试开始========================== 
-2023-03-21 16:13:02,539 INFO  [AccountAction] 103d5b69-f1d8-4d48-94e0-46608214be39 
-2023-03-21 16:13:04,506 INFO  [LogUtil] 客户名称文本框输入:自动化测试输入客户名称 
-2023-03-21 16:13:05,591 INFO  [LogUtil] SAP Code文本框输入:123456 
-2023-03-21 16:13:06,322 INFO  [LogUtil] 客户类型下拉框选择:直客-游戏 
-2023-03-21 16:13:07,950 INFO  [LogUtil] 客户等级下拉框选择:Tier3 普通 
-2023-03-21 16:13:09,481 INFO  [LogUtil] 销售下拉框选择:李薇薇<liweiwei@cmcm.com> 
-2023-03-21 16:13:11,187 INFO  [LogUtil] AM下拉框选择:韩玮瑶<hanweiyao@cmcm.com> 
-2023-03-21 16:13:13,031 INFO  [LogUtil] 优化师下拉框选择:刘旭达<liuxuda@cmcm.com> 
-2023-03-21 16:13:14,849 INFO  [LogUtil] 点击下一步按钮 
-2023-03-21 16:13:16,241 INFO  [LogUtil] 点击下一步失败,详情请看日志或截图! 
-2023-03-21 16:13:16,425 INFO  [LogUtil] =============================自动化测试结束=========================== 
-2023-03-21 16:16:48,751 INFO  [LogUtil] ==========================内部运营平台客户管理-客户列表-新增客户功能自动化测试开始========================== 
-2023-03-21 16:16:48,756 INFO  [AccountAction] 38f7ecc7-ebff-4236-aa3b-ff5b08484c22 
-2023-03-21 16:16:50,697 INFO  [LogUtil] 客户名称文本框输入:自动化测试输入客户名称 
-2023-03-21 16:16:51,721 INFO  [LogUtil] SAP Code文本框输入:123456 
-2023-03-21 16:16:52,467 INFO  [LogUtil] 客户类型下拉框选择:直客-游戏 
-2023-03-21 16:16:54,119 INFO  [LogUtil] 客户等级下拉框选择:Tier3 普通 
-2023-03-21 16:16:55,705 INFO  [LogUtil] 销售下拉框选择:李薇薇<liweiwei@cmcm.com> 
-2023-03-21 16:16:57,478 INFO  [LogUtil] AM下拉框选择:韩玮瑶<hanweiyao@cmcm.com> 
-2023-03-21 16:16:59,359 INFO  [LogUtil] 优化师下拉框选择:刘旭达<liuxuda@cmcm.com> 
-2023-03-21 16:17:01,228 INFO  [LogUtil] 点击下一步按钮 
-2023-03-21 16:17:02,635 INFO  [LogUtil] 联系人姓名文本框输入:赵天宇 
-2023-03-21 16:17:02,653 INFO  [LogUtil] =============================自动化测试结束=========================== 
-2023-03-21 16:18:08,542 INFO  [LogUtil] ==========================内部运营平台客户管理-客户列表-新增客户功能自动化测试开始========================== 
-2023-03-21 16:18:08,548 INFO  [AccountAction] b4166fce-f8e8-41a9-a397-710f962ad0ae 
-2023-03-21 16:18:10,521 INFO  [LogUtil] 客户名称文本框输入:自动化测试输入客户名称 
-2023-03-21 16:18:11,513 INFO  [LogUtil] SAP Code文本框输入:123456 
-2023-03-21 16:18:12,225 INFO  [LogUtil] 客户类型下拉框选择:直客-游戏 
-2023-03-21 16:18:13,860 INFO  [LogUtil] 客户等级下拉框选择:Tier3 普通 
-2023-03-21 16:18:15,439 INFO  [LogUtil] 销售下拉框选择:李薇薇<liweiwei@cmcm.com> 
-2023-03-21 16:18:17,178 INFO  [LogUtil] AM下拉框选择:韩玮瑶<hanweiyao@cmcm.com> 
-2023-03-21 16:18:19,020 INFO  [LogUtil] 优化师下拉框选择:刘旭达<liuxuda@cmcm.com> 
-2023-03-21 16:18:20,913 INFO  [LogUtil] 点击下一步按钮 
-2023-03-21 16:18:22,329 INFO  [LogUtil] 联系人姓名文本框输入:赵天宇 
-2023-03-21 16:18:22,342 INFO  [LogUtil] 点击下一步失败,详情请看日志或截图!Origin element is not displayed
-Build info: version: '4.0.0', revision: '3a21814679'
-System info: host: 'SK-20200727ZRHZ', ip: '10.60.17.63', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [975bd8c3-faf6-43e5-8f02-f1d235ccc989, actions {actions=[org.openqa.selenium.interactions.Sequence@6ccac6f4]}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 111.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20230309232128, moz:debuggerAddress: 127.0.0.1:54507, moz:geckodriverVersion: 0.32.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 11908, moz:profile: C:\Users\cm\AppData\Local\T..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://127.0.0.1:54507/devtoo..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 975bd8c3-faf6-43e5-8f02-f1d235ccc989 
-2023-03-21 16:18:22,535 INFO  [LogUtil] =============================自动化测试结束=========================== 
-2023-03-21 16:20:04,031 INFO  [LogUtil] ==========内部运营平台客户管理-客户列表-新增客户功能自动化测试开始=========== 
-2023-03-21 16:20:04,037 INFO  [AccountAction] f95f7747-7aa1-4259-900f-a763999041f0 
-2023-03-21 16:20:05,987 INFO  [LogUtil] 客户名称文本框输入:自动化测试输入客户名称 
-2023-03-21 16:20:06,957 INFO  [LogUtil] SAP Code文本框输入:123456 
-2023-03-21 16:20:07,671 INFO  [LogUtil] 客户类型下拉框选择:直客-游戏 
-2023-03-21 16:20:09,195 INFO  [LogUtil] 客户等级下拉框选择:Tier3 普通 
-2023-03-21 16:20:10,707 INFO  [LogUtil] 销售下拉框选择:李薇薇<liweiwei@cmcm.com> 
-2023-03-21 16:20:12,296 INFO  [LogUtil] AM下拉框选择:韩玮瑶<hanweiyao@cmcm.com> 
-2023-03-21 16:20:14,080 INFO  [LogUtil] 优化师下拉框选择:刘旭达<liuxuda@cmcm.com> 
-2023-03-21 16:20:15,939 INFO  [LogUtil] 点击下一步按钮 
-2023-03-21 16:20:17,306 INFO  [LogUtil] 联系人姓名文本框输入:赵天宇 
-2023-03-21 16:20:18,039 INFO  [LogUtil] 联系人手机号文本框输入:13801281666 
-2023-03-21 16:20:18,773 INFO  [LogUtil] 联系人Email文本框输入:zhaotianyu19940411@163.com 
-2023-03-21 16:20:19,544 INFO  [LogUtil] 点击确定按钮 
-2023-03-21 16:20:22,000 INFO  [LogUtil] 新增客户信息成功! 
-2023-03-21 16:20:22,237 INFO  [LogUtil] 清除垃圾数据失败! 
-2023-03-21 16:20:22,238 INFO  [LogUtil] =============================自动化测试结束=========================== 
-2023-03-21 16:28:53,106 INFO  [LogUtil] ==========内部运营平台客户管理-客户列表-新增客户功能自动化测试开始=========== 
-2023-03-21 16:28:53,111 INFO  [AccountAction] 152982c4-56e7-4f39-b35c-93432a01ac25 
-2023-03-21 16:28:55,255 INFO  [LogUtil] 客户名称文本框输入:自动化测试输入客户名称 
-2023-03-21 16:28:56,255 INFO  [LogUtil] SAP Code文本框输入:123456 
-2023-03-21 16:28:56,995 INFO  [LogUtil] 客户类型下拉框选择:直客-游戏 
-2023-03-21 16:28:58,589 INFO  [LogUtil] 客户等级下拉框选择:Tier3 普通 
-2023-03-21 16:29:00,141 INFO  [LogUtil] 销售下拉框选择:李薇薇<liweiwei@cmcm.com> 
-2023-03-21 16:29:01,872 INFO  [LogUtil] AM下拉框选择:韩玮瑶<hanweiyao@cmcm.com> 
-2023-03-21 16:29:03,738 INFO  [LogUtil] 优化师下拉框选择:刘旭达<liuxuda@cmcm.com> 
-2023-03-21 16:29:05,614 INFO  [LogUtil] 点击下一步按钮 
-2023-03-21 16:29:06,955 INFO  [LogUtil] 联系人姓名文本框输入:赵天宇 
-2023-03-21 16:29:07,714 INFO  [LogUtil] 联系人手机号文本框输入:13801281666 
-2023-03-21 16:29:08,568 INFO  [LogUtil] 联系人Email文本框输入:zhaotianyu19940411@163.com 
-2023-03-21 16:29:09,292 INFO  [LogUtil] 点击确定按钮 
-2023-03-21 16:29:11,985 INFO  [LogUtil] 新增客户信息失败! 
-2023-03-21 16:29:11,987 INFO  [LogUtil] 清除垃圾数据失败! 
-2023-03-21 16:29:11,988 INFO  [LogUtil] =============================自动化测试结束=========================== 
-2023-03-21 16:31:13,307 INFO  [LogUtil] ==========内部运营平台客户管理-客户列表-新增客户功能自动化测试开始=========== 
-2023-03-21 16:31:13,312 INFO  [AccountAction] d7663e74-fde9-427d-a3f0-2eb1bc4f5376 
-2023-03-21 16:31:15,270 INFO  [LogUtil] 客户名称文本框输入:自动化测试输入客户名称 
-2023-03-21 16:31:16,249 INFO  [LogUtil] SAP Code文本框输入:123456 
-2023-03-21 16:31:16,995 INFO  [LogUtil] 客户类型下拉框选择:直客-游戏 
-2023-03-21 16:31:18,548 INFO  [LogUtil] 客户等级下拉框选择:Tier3 普通 
-2023-03-21 16:31:20,095 INFO  [LogUtil] 销售下拉框选择:李薇薇<liweiwei@cmcm.com> 
-2023-03-21 16:31:21,740 INFO  [LogUtil] AM下拉框选择:韩玮瑶<hanweiyao@cmcm.com> 
-2023-03-21 16:31:23,589 INFO  [LogUtil] 优化师下拉框选择:刘旭达<liuxuda@cmcm.com> 
-2023-03-21 16:31:25,434 INFO  [LogUtil] 点击下一步按钮 
-2023-03-21 16:31:26,842 INFO  [LogUtil] 联系人姓名文本框输入:赵天宇 
-2023-03-21 16:31:27,582 INFO  [LogUtil] 联系人手机号文本框输入:13801281666 
-2023-03-21 16:31:28,418 INFO  [LogUtil] 联系人Email文本框输入:zhaotianyu19940411@163.com 
-2023-03-21 16:31:29,224 INFO  [LogUtil] 点击确定按钮 
-2023-03-21 16:31:31,707 INFO  [LogUtil] 新增客户失败,原因为:expected [true] but found [false]或查看日志截图! 
-2023-03-21 16:31:31,875 INFO  [LogUtil] =============================自动化测试结束=========================== 
-2023-03-21 16:35:05,031 INFO  [LogUtil] ==========内部运营平台客户管理-客户列表-新增客户功能自动化测试开始=========== 
-2023-03-21 16:35:05,034 INFO  [AccountAction] 7d4f802d-1612-42c2-8634-c26236c41d9d 
-2023-03-21 16:35:07,017 INFO  [LogUtil] 客户名称文本框输入:自动化测试输入客户名称 
-2023-03-21 16:35:07,985 INFO  [LogUtil] SAP Code文本框输入:123456 
-2023-03-21 16:35:08,675 INFO  [LogUtil] 客户类型下拉框选择:直客-游戏 
-2023-03-21 16:35:10,191 INFO  [LogUtil] 客户等级下拉框选择:Tier3 普通 
-2023-03-21 16:35:11,712 INFO  [LogUtil] 销售下拉框选择:李薇薇<liweiwei@cmcm.com> 
-2023-03-21 16:35:13,312 INFO  [LogUtil] AM下拉框选择:韩玮瑶<hanweiyao@cmcm.com> 
-2023-03-21 16:35:15,095 INFO  [LogUtil] 优化师下拉框选择:刘旭达<liuxuda@cmcm.com> 
-2023-03-21 16:35:16,919 INFO  [LogUtil] 点击下一步按钮 
-2023-03-21 16:35:18,340 INFO  [LogUtil] 联系人姓名文本框输入:赵天宇 
-2023-03-21 16:35:19,070 INFO  [LogUtil] 联系人手机号文本框输入:13801281666 
-2023-03-21 16:35:19,808 INFO  [LogUtil] 联系人Email文本框输入:zhaotianyu19940411@163.com 
-2023-03-21 16:35:20,538 INFO  [LogUtil] 点击确定按钮 
-2023-03-21 16:35:23,230 INFO  [LogUtil] 新增客户信息成功! 
-2023-03-21 16:35:23,239 INFO  [LogUtil] 自动化测试垃圾数据已清除! 
-2023-03-21 16:35:23,241 INFO  [LogUtil] =============================自动化测试结束=========================== 
-2023-03-21 16:35:50,784 INFO  [LogUtil] ==========内部运营平台客户管理-客户列表-新增客户功能自动化测试开始=========== 
-2023-03-21 16:35:50,789 INFO  [AccountAction] b41dca77-e1f5-4141-beb6-82bd76c25e16 
-2023-03-21 16:35:52,725 INFO  [LogUtil] 客户名称文本框输入:自动化测试输入客户名称 
-2023-03-21 16:35:53,650 INFO  [LogUtil] SAP Code文本框输入:123456 
-2023-03-21 16:35:54,326 INFO  [LogUtil] 客户类型下拉框选择:直客-游戏 
-2023-03-21 16:35:55,857 INFO  [LogUtil] 客户等级下拉框选择:Tier3 普通 
-2023-03-21 16:35:57,408 INFO  [LogUtil] 销售下拉框选择:李薇薇<liweiwei@cmcm.com> 
-2023-03-21 16:35:59,041 INFO  [LogUtil] AM下拉框选择:韩玮瑶<hanweiyao@cmcm.com> 
-2023-03-21 16:36:00,781 INFO  [LogUtil] 优化师下拉框选择:刘旭达<liuxuda@cmcm.com> 
-2023-03-21 16:36:02,535 INFO  [LogUtil] 点击下一步按钮 
-2023-03-21 16:36:03,956 INFO  [LogUtil] 联系人姓名文本框输入:赵天宇 
-2023-03-21 16:36:03,966 INFO  [LogUtil] 点击下一步失败,详情请看日志或截图!Origin element is not displayed
-Build info: version: '4.0.0', revision: '3a21814679'
-System info: host: 'SK-20200727ZRHZ', ip: '10.60.17.63', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [08cc1bba-f732-46ed-9964-8c8c7d3d4b58, actions {actions=[org.openqa.selenium.interactions.Sequence@3b42121d]}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 111.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20230309232128, moz:debuggerAddress: 127.0.0.1:56506, moz:geckodriverVersion: 0.32.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 32976, moz:profile: C:\Users\cm\AppData\Local\T..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://127.0.0.1:56506/devtoo..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 08cc1bba-f732-46ed-9964-8c8c7d3d4b58 
-2023-03-21 16:36:04,146 INFO  [LogUtil] =============================自动化测试结束=========================== 
-2023-03-21 16:36:51,613 INFO  [LogUtil] ==========内部运营平台客户管理-客户列表-新增客户功能自动化测试开始=========== 
-2023-03-21 16:36:51,618 INFO  [AccountAction] 1fb9c111-1880-4004-a94c-e430ddd3b760 
-2023-03-21 16:36:53,567 INFO  [LogUtil] 客户名称文本框输入:自动化测试输入客户名称 
-2023-03-21 16:36:54,552 INFO  [LogUtil] SAP Code文本框输入:123456 
-2023-03-21 16:36:55,283 INFO  [LogUtil] 客户类型下拉框选择:直客-游戏 
-2023-03-21 16:36:56,816 INFO  [LogUtil] 客户等级下拉框选择:Tier3 普通 
-2023-03-21 16:36:58,404 INFO  [LogUtil] 销售下拉框选择:李薇薇<liweiwei@cmcm.com> 
-2023-03-21 16:36:59,986 INFO  [LogUtil] AM下拉框选择:韩玮瑶<hanweiyao@cmcm.com> 
-2023-03-21 16:37:01,792 INFO  [LogUtil] 优化师下拉框选择:刘旭达<liuxuda@cmcm.com> 
-2023-03-21 16:37:03,592 INFO  [LogUtil] 点击下一步按钮 
-2023-03-21 16:37:04,966 INFO  [LogUtil] 联系人姓名文本框输入:赵天宇 
-2023-03-21 16:37:05,686 INFO  [LogUtil] 联系人手机号文本框输入:13801281666 
-2023-03-21 16:37:06,445 INFO  [LogUtil] 联系人Email文本框输入:zhaotianyu19940411@163.com 
-2023-03-21 16:37:07,175 INFO  [LogUtil] 点击确定按钮 
-2023-03-21 16:37:09,863 INFO  [LogUtil] 新增客户信息成功! 
-2023-03-21 16:37:09,869 INFO  [LogUtil] 自动化测试垃圾数据已清除! 
-2023-03-21 16:37:09,870 INFO  [LogUtil] =============================自动化测试结束=========================== 
+2023-03-21 18:56:20,893 INFO  [LogUtil] =============================自动化测试开始=========================== 
+2023-03-21 18:56:21,904 INFO  [LogUtil] 客户ID文本框输入23 
+2023-03-21 18:56:21,952 INFO  [LogUtil] 点击搜索按钮 
+2023-03-21 18:56:22,776 INFO  [LogUtil] 断言页面是否包括脱敏数据,23因为字符串长度较短,仅截取前1位! 
+2023-03-21 18:56:23,062 INFO  [LogUtil] 清除文本框内容 
+2023-03-21 18:56:24,103 INFO  [LogUtil] 联合搜索下拉框选择《环球时报》社有限公司 
+2023-03-21 18:56:25,687 INFO  [LogUtil] 点击搜索按钮 
+2023-03-21 18:56:26,481 INFO  [LogUtil] 断言页面是否包括脱敏数据前两位: 《环,后两位: 公司 
+2023-03-21 18:56:27,164 INFO  [LogUtil] 页面找到字符串: 《环球时报》社有限公司, 断言成功! 
+2023-03-21 18:56:28,887 INFO  [LogUtil] SAP客户名称下拉框选择作废-萨提尼尔（香港）有限公司 
+2023-03-21 18:56:30,481 INFO  [LogUtil] 点击搜索按钮 
+2023-03-21 18:56:31,279 INFO  [LogUtil] 断言页面是否包括脱敏数据前两位: 作废,后两位: 公司 
+2023-03-21 18:56:32,222 INFO  [LogUtil] 页面找到字符串: 作废-萨提尼尔（香港）有限公司, 断言成功! 
+2023-03-21 18:56:35,232 INFO  [LogUtil] =============================自动化测试结束=========================== 
+2023-03-21 18:57:17,548 INFO  [LogUtil] =============================自动化测试开始=========================== 
+2023-03-21 18:57:18,552 INFO  [LogUtil] 客户ID文本框输入23 
+2023-03-21 18:57:18,598 INFO  [LogUtil] 点击搜索按钮 
+2023-03-21 18:57:19,444 INFO  [LogUtil] 断言页面是否包括脱敏数据,23因为字符串长度较短,仅截取前1位! 
+2023-03-21 18:57:19,726 INFO  [LogUtil] 页面找到字符串: 23, 断言成功! 
+2023-03-21 18:57:19,727 INFO  [LogUtil] 清除文本框内容 
+2023-03-21 18:57:20,763 INFO  [LogUtil] 联合搜索下拉框选择《环球时报》社有限公司 
+2023-03-21 18:57:22,354 INFO  [LogUtil] 点击搜索按钮 
+2023-03-21 18:57:23,157 INFO  [LogUtil] 断言页面是否包括脱敏数据前两位: 《环,后两位: 公司 
+2023-03-21 18:57:23,736 INFO  [LogUtil] 页面找到字符串: 《环球时报》社有限公司, 断言成功! 
+2023-03-21 18:57:25,538 INFO  [LogUtil] SAP客户名称下拉框选择作废-萨提尼尔（香港）有限公司 
+2023-03-21 18:57:27,089 INFO  [LogUtil] 点击搜索按钮 
+2023-03-21 18:57:27,862 INFO  [LogUtil] 断言页面是否包括脱敏数据前两位: 作废,后两位: 公司 
+2023-03-21 18:57:28,466 INFO  [LogUtil] 页面找到字符串: 作废-萨提尼尔（香港）有限公司, 断言成功! 
+2023-03-21 18:57:31,473 INFO  [LogUtil] =============================自动化测试结束=========================== 

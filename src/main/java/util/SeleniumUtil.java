@@ -1,8 +1,10 @@
 package util;
 
+import cheetahgo.constant.Constants;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.springframework.util.FileCopyUtils;
+import org.testng.Assert;
 
 import java.io.File;
 import java.io.IOException;
@@ -51,14 +53,12 @@ public class SeleniumUtil {
      * @param elementsName
      */
     public static void actionMoveClickRelease(WebDriver webDriver, String elementsName) {
+        WaitUtil.sleep(500);
         Actions action = new Actions(webDriver);
         WebElement element = webDriver.findElement(By.xpath(elementsName));
         action.moveToElement(element).perform();
-        WaitUtil.sleep(1000);
         action.clickAndHold().perform();
-        WaitUtil.sleep(1000);
         action.release().perform();
-        WaitUtil.sleep(1000);
     }
 
     /**
@@ -109,6 +109,29 @@ public class SeleniumUtil {
             FileCopyUtils.copy(srcFile, new File(filePath));
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void assertContainsPageSource(WebDriver webDriver, String str) {
+        try {
+            Thread.sleep(500);
+            WebElement element = webDriver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/div"));
+            if (str.length() > 4) {
+                String str1 = str.substring(0, 2);
+                String str2 = str.substring(str.length() - 2);
+                LogUtil.info("断言页面是否包括脱敏数据前两位: " + str1 + ",后两位: " + str2);
+                Assert.assertTrue(element.getText().contains(str1) && element.getText().contains(str2));
+                LogUtil.info("页面找到字符串: " + str + ", 断言成功!");
+            } else {
+                String str1 = str.substring(0, str.length() - 1);
+                LogUtil.info("断言页面是否包括脱敏数据," + str + "因为字符串长度较短,仅截取前" + (str.length() - 1) + "位!");
+                Assert.assertTrue(element.getText().contains(str1));
+                LogUtil.info("页面找到字符串: " + str + ", 断言成功!");
+            }
+        } catch (AssertionError | InterruptedException e) {
+            LogUtil.info("页面未找到" + str + "断言失败!");
+            SeleniumUtil.takeTakesScreenshot(webDriver);
+            Assert.assertTrue(false);
         }
     }
 }
