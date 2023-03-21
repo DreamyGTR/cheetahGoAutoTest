@@ -68,8 +68,8 @@
             <option name="tableUIInfoList">
               <list>
                 <TableUIInfo>
-                  <option name="className" value="CheetahgoCustomerCooperateClient" />
-                  <option name="tableName" value="cheetahgo_customer_cooperate_client" />
+                  <option name="className" value="CheetahgoCustomerContact" />
+                  <option name="tableName" value="cheetahgo_customer_contact" />
                 </TableUIInfo>
               </list>
             </option>

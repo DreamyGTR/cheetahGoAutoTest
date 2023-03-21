@@ -19,6 +19,8 @@ public interface CheetahgoCustomerCooperateClientMapper extends BaseMapper<Cheet
 
     int deleteById(@Param("id") Long id);
 
+    int deleteByName(@Param("name") String name);
+
     List<CheetahgoCustomerCooperateClient> selectAll();
 }
 

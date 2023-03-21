@@ -1,7 +1,9 @@
 package cheetahgo.action.CustomerManagementAction;
 
+import cheetahgo.constant.Constants;
 import cheetahgo.pageobjects.CustomerManagementPageObject.AccountListPageObject;
 import cheetahgo.pageobjects.CustomerManagementPageObject.CustomerManagementPageObject;
+import com.mysql.cj.log.Log;
 import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -14,7 +16,7 @@ import util.WaitUtil;
  */
 @Log4j
 public class AccountAction {
-        /**
+    /**
      * 客户管理-客户列表筛选器功能UI自动化场景测试
      *
      * @param webDriver
@@ -30,7 +32,7 @@ public class AccountAction {
         LogUtil.info("客户ID文本框输入10555");
         accountListPageObject.selectButton().click();
         WaitUtil.sleep(1000);
-        SeleniumUtil.choiceSelect(accountListPageObject.uniteSelect(),webDriver,"ant-select-dropdown-menu-item","广州棒谷网络科技有限公司");
+        SeleniumUtil.choiceSelect(accountListPageObject.uniteSelect(), webDriver, "ant-select-dropdown-menu-item", "广州棒谷网络科技有限公司");
         accountListPageObject.selectButton().click();
         LogUtil.info("点击搜索按钮");
         Assert.assertTrue(webDriver.getPageSource().contains("10555"));
@@ -97,23 +99,43 @@ public class AccountAction {
         AccountListPageObject accountListPageObject = new AccountListPageObject(webDriver);
         customerManagementPageObject.customerManagement().click();
         customerManagementPageObject.customerList().click();
-        LogUtil.info("=============================自动化测试开始===========================");
+        LogUtil.info("==========内部运营平台客户管理-客户列表-新增客户功能自动化测试开始===========");
         log.info(webDriver.getWindowHandle());
         accountListPageObject.addCustomerButton().click();
         Thread.sleep(1500);
+        LogUtil.info("客户名称文本框输入:自动化测试输入客户名称");
         SeleniumUtil.coverDivInputSendKeys(webDriver, accountListPageObject.addCustomerNameInput(), "自动化测试输入客户名称");
+        LogUtil.info("SAP Code文本框输入:123456");
         SeleniumUtil.coverDivInputSendKeys(webDriver, accountListPageObject.addCustomerSAPCodeInput(), "123456");
+        LogUtil.info("客户类型下拉框选择:直客-游戏");
         SeleniumUtil.choiceSelect(accountListPageObject.addCustomerTypeSelect(), webDriver, "ant-select-dropdown-menu-item", "直客-游戏");
+        LogUtil.info("客户等级下拉框选择:Tier3 普通");
         SeleniumUtil.choiceSelect(accountListPageObject.addCustomerLevelSelect(), webDriver, "ant-select-dropdown-menu-item", "Tier3 普通");
+        LogUtil.info("销售下拉框选择:李薇薇<liweiwei@cmcm.com>");
         SeleniumUtil.choiceSelect(accountListPageObject.addCustomerSalesSelect(), webDriver, "ant-select-dropdown-menu-item", "李薇薇<liweiwei@cmcm.com>");
+        LogUtil.info("AM下拉框选择:韩玮瑶<hanweiyao@cmcm.com>");
         SeleniumUtil.choiceSelect(accountListPageObject.addCustomerAMSelect(), webDriver, "ant-select-dropdown-menu-item", "韩玮瑶<hanweiyao@cmcm.com>");
+        LogUtil.info("优化师下拉框选择:刘旭达<liuxuda@cmcm.com>");
         SeleniumUtil.choiceSelect(accountListPageObject.addCustomerOptimistSelect(), webDriver, "ant-select-dropdown-menu-item", "刘旭达<liuxuda@cmcm.com>");
-        accountListPageObject.addCustomerConfirmButton().click();
-        WaitUtil.sleep(1000);
-        SeleniumUtil.coverDivInputSendKeys(webDriver,accountListPageObject.addCustomerContactName(),"赵天宇");
-        SeleniumUtil.coverDivInputSendKeys(webDriver,accountListPageObject.addCustomerContactPhone(),"13901396665");
-        SeleniumUtil.coverDivInputSendKeys(webDriver,accountListPageObject.addCustomerContactEmail(),"zhaotianyu19940411@163.com");
+        try {
+            LogUtil.info("点击下一步按钮");
+            accountListPageObject.addCustomerConfirmButton().click();
+            Thread.sleep(1000);
+            String pageSource = webDriver.getPageSource();
+            LogUtil.info("联系人姓名文本框输入:" + Constants.TestCustomerContactsName);
+            SeleniumUtil.coverDivInputSendKeys(webDriver, accountListPageObject.addCustomerContactName(), Constants.TestCustomerContactsName);
+        } catch (Exception e) {
+            LogUtil.info("点击下一步失败,详情请看日志或截图!" + e.getMessage());
+            SeleniumUtil.takeTakesScreenshot(webDriver);
+            Assert.assertTrue(false);
+        }
+        LogUtil.info("联系人手机号文本框输入:" + Constants.TestCustomerPhone);
+        SeleniumUtil.coverDivInputSendKeys(webDriver, accountListPageObject.addCustomerContactPhone(), Constants.TestCustomerPhone);
+        LogUtil.info("联系人Email文本框输入:" + Constants.TestCustomerEmail);
+        SeleniumUtil.coverDivInputSendKeys(webDriver, accountListPageObject.addCustomerContactEmail(), Constants.TestCustomerEmail);
+        LogUtil.info("点击确定按钮");
         accountListPageObject.addCustomerContactConfirmButton().click();
         WaitUtil.sleep(2000);
+
     }
 }

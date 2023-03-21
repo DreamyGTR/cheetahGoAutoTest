@@ -90,7 +90,7 @@ public class SeleniumUtil {
     /**
      * 截图方法,该方法调用了实践类和文件操作类的静态方法,用来一时间格式生成目录名称和截图文件名称
      */
-    public void takeTakesScreenshot(WebDriver driver) {
+    public static void takeTakesScreenshot(WebDriver driver) {
         try {
             //生成日期对象
             Date date = new Date();

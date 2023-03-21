@@ -40,4 +40,9 @@
         <include refid="Base_Column_List"/>
         from cheetahgo_customer_cooperate_client
     </select>
+    <delete id="deleteByName">
+        delete
+        from cheetahgo_customer_cooperate_client
+        where name = #{name,jdbcType=VARCHAR}
+    </delete>
 </mapper>

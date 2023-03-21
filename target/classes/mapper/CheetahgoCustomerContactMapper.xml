@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cheetahgo.mapper.CheetahgoCustomerContactMapper">
+
+    <resultMap id="BaseResultMap" type="cheetahgo.entity.CheetahgoCustomerContact">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="customerId" column="customer_id" jdbcType="INTEGER"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="cellphone" column="cellphone" jdbcType="VARCHAR"/>
+            <result property="cellphoneEncrypted" column="cellphone_encrypted" jdbcType="VARCHAR"/>
+            <result property="email" column="email" jdbcType="VARCHAR"/>
+            <result property="emailEncrypted" column="email_encrypted" jdbcType="VARCHAR"/>
+            <result property="priority" column="priority" jdbcType="TINYINT"/>
+            <result property="mailType" column="mail_type" jdbcType="VARCHAR"/>
+            <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
+            <result property="updateDate" column="update_date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,customer_id,name,
+        cellphone,cellphone_encrypted,email,
+        email_encrypted,priority,mail_type,
+        create_date,update_date
+    </sql>
+    <delete id="delByCellphone">
+        delete
+        from cheetahgo_customer_contact
+        where cellphone = #{cellphone,jdbcType=VARCHAR}
+    </delete>
+</mapper>
