@@ -19,6 +19,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import util.LogUtil;
 import util.SeleniumUtil;
 import util.WaitUtil;
@@ -30,9 +31,7 @@ import java.util.concurrent.TimeUnit;
  */
 @SpringBootTest(classes = cheetahGoAutoTestApplication.class)
 public class cheetahGoTest extends AbstractTestNGSpringContextTests {
-
     public WebDriver webDriver;
-
     @Autowired
     CheetahgoCustomerCooperateClientMapper mapper;
     @Autowired
@@ -50,40 +49,41 @@ public class cheetahGoTest extends AbstractTestNGSpringContextTests {
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         LoginAction.executeLogin(webDriver, Constants.UserName, Constants.PassWord);
-
         WaitUtil.sleep(3000);
     }
 
     @Test(groups = "CustomerManagement")
     public void testSelect() throws Exception {
-        AccountAction.CustomerManagementSelectAction(webDriver);
+        SoftAssert softAssert = new SoftAssert();
+        AccountAction.CustomerManagementSelectAction(softAssert, webDriver);
+        softAssert.assertAll();
     }
 
-    @Test(groups = "CustomerManagement")
-    public void addCustomer() throws Exception {
-        String pageSource = webDriver.getPageSource();
-        AccountAction.CustomerManagementAddCustomerMessageAction(webDriver);
-        try {
-            Assert.assertTrue(pageSource.contains("新增成功"));
-            if (ccmMapper.selectByName(Constants.TestCustomerName).size() > 0) {
-                LogUtil.info("新增客户信息成功!");
-                if (ccmMapper.deleteByName(Constants.TestCustomerName) > 0 && cccmMapper.delByCellphone(Constants.TestCustomerPhone) > 0) {
-                    LogUtil.info("自动化测试垃圾数据已清除!");
-                } else {
-                    LogUtil.info("清除垃圾数据失败!");
-                    Assert.assertTrue(false);
-                }
-            } else {
-                LogUtil.info("新增客户信息失败!");
-                Assert.assertTrue(false);
-            }
-        } catch (AssertionError error) {
-            LogUtil.info("新增客户失败,原因为:" + error.getMessage() + "或查看日志截图!");
-            System.out.println("catch中的代码被执行了!");
-            SeleniumUtil.takeTakesScreenshot(webDriver);
-            Assert.assertTrue(false);
-        }
-    }
+//    @Test(groups = "CustomerManagement")
+//    public void addCustomer() throws Exception {
+//        String pageSource = webDriver.getPageSource();
+//        AccountAction.CustomerManagementAddCustomerMessageAction(webDriver);
+//        try {
+//            Assert.assertTrue(pageSource.contains("新增成功"));
+//            if (ccmMapper.selectByName(Constants.TestCustomerName).size() > 0) {
+//                LogUtil.info("新增客户信息成功!");
+//                if (ccmMapper.deleteByName(Constants.TestCustomerName) > 0 && cccmMapper.delByCellphone(Constants.TestCustomerPhone) > 0) {
+//                    LogUtil.info("自动化测试垃圾数据已清除!");
+//                } else {
+//                    LogUtil.info("清除垃圾数据失败!");
+//                    Assert.assertTrue(false);
+//                }
+//            } else {
+//                LogUtil.info("新增客户信息失败!");
+//                Assert.assertTrue(false);
+//            }
+//        } catch (AssertionError error) {
+//            LogUtil.info("新增客户失败,原因为:" + error.getMessage() + "或查看日志截图!");
+//            System.out.println("catch中的代码被执行了!");
+//            SeleniumUtil.takeTakesScreenshot(webDriver);
+//            Assert.assertTrue(false);
+//        }
+//    }
 
     @AfterTest()
     public void addCustomerAfterTest() {

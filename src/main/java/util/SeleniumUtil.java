@@ -5,6 +5,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.springframework.util.FileCopyUtils;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import java.io.File;
 import java.io.IOException;
@@ -119,57 +120,64 @@ public class SeleniumUtil {
      * @param webDriver
      * @param str
      */
-    public static void assertSensitiveContainsPageSource(WebDriver webDriver, String str) {
-        try {
-            Thread.sleep(500);
-            WebElement element = webDriver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/div"));
-            String str1;
-            if (str.length() > 4) {
-                str1 = str.substring(0, 2);
-                String str2 = str.substring(str.length() - 2);
-                LogUtil.info("断言页面是否包括脱敏数据前两位: " + str1 + ",后两位: " + str2);
-                Assert.assertTrue(element.getText().contains(str1) && element.getText().contains(str2));
+    public static void softAssertSensitiveContainsPageSource(SoftAssert softAssert, WebDriver webDriver, String str) throws AssertionError, InterruptedException {
+        Thread.sleep(500);
+        WebElement element = webDriver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/div"));
+        String str1;
+        if (str.length() > 4) {
+            str1 = str.substring(0, 2);
+            String str2 = str.substring(str.length() - 2);
+            LogUtil.info("断言页面是否包括脱敏数据前两位: " + str1 + ",后两位: " + str2);
+            int n = 5;
+            if (element.getText().contains(str1) && element.getText().contains(str2)) {
+                LogUtil.info("断言: " + str + " 成功!");
+                softAssert.assertTrue(true);
             } else {
-                str1 = str.substring(0, str.length() - 1);
-                LogUtil.info("断言页面是否包括脱敏数据," + str + "因为字符串长度较短,仅截取前" + (str.length() - 1) + "位!");
-                Assert.assertTrue(element.getText().contains(str1));
+                LogUtil.info("页面未找到" + str + "断言失败!");
+                SeleniumUtil.takeTakesScreenshot(webDriver);
+                softAssert.assertTrue(false);
             }
-            LogUtil.info("页面找到字符串: " + str + ", 断言成功!");
-        } catch (AssertionError | InterruptedException e) {
-            LogUtil.info("页面未找到" + str + "断言失败!");
-            SeleniumUtil.takeTakesScreenshot(webDriver);
-            Assert.assertTrue(false);
+        } else {
+            str1 = str.substring(0, str.length() - 1);
+            LogUtil.info("断言页面是否包括脱敏数据," + str + "因为字符串长度较短,仅截取前" + (str.length() - 1) + "位!");
+            if (element.getText().contains(str1)) {
+                LogUtil.info("断言: " + str + " 成功!");
+                softAssert.assertTrue(true);
+            } else {
+                LogUtil.info("页面未找到" + str + "断言失败!");
+                SeleniumUtil.takeTakesScreenshot(webDriver);
+                softAssert.assertTrue(false);
+            }
         }
     }
 
-    public static void assertContainsPageSourceByIndex(WebDriver webDriver, String str, int beginIndex, int endIndex) {
+    public static void softAssertContainsPageSourceByIndex(SoftAssert softAssert, WebDriver webDriver, String str, int beginIndex, int endIndex) throws InterruptedException {
+        Thread.sleep(500);
         String subString = str.substring(beginIndex, endIndex);
-        try {
-            Thread.sleep(500);
-            WebElement element = webDriver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/div"));
-            LogUtil.info("断言页面是否: " + subString);
-            Assert.assertTrue(element.getText().contains(subString));
-            LogUtil.info("页面找到字符串: " + subString + ", 断言成功!");
-        } catch (AssertionError | InterruptedException e) {
+        WebElement element = webDriver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/div"));
+        LogUtil.info("断言页面是否: " + subString);
+        if (element.getText().contains(subString)) {
+            LogUtil.info("断言: " + str + " 成功!");
+            softAssert.assertTrue(true);
+        } else {
             LogUtil.info("页面未找到" + subString + "断言失败!");
             SeleniumUtil.takeTakesScreenshot(webDriver);
-            Assert.assertTrue(false);
-            e.printStackTrace();
+            softAssert.assertTrue(false);
         }
     }
 
-    public static void assertContainsPageSource(WebDriver webDriver, String str) {
-        try {
-            Thread.sleep(500);
-            WebElement element = webDriver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/div"));
-            LogUtil.info("断言页面是否: " + str);
-            Assert.assertTrue(element.getText().contains(str));
-            LogUtil.info("页面找到字符串: " + str + ", 断言成功!");
-        } catch (AssertionError | InterruptedException e) {
+    public static void softAssertContainsPageSource(SoftAssert softAssert, WebDriver webDriver, String str) throws InterruptedException {
+        Thread.sleep(500);
+        WebElement element = webDriver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/div"));
+        LogUtil.info("断言页面是否: " + str);
+        if (element.getText().contains(str)) {
+            LogUtil.info("断言: " + str + " 成功!");
+            softAssert.assertTrue(true);
+        } else {
             LogUtil.info("页面未找到" + str + "断言失败!");
             SeleniumUtil.takeTakesScreenshot(webDriver);
-            Assert.assertTrue(false);
-            e.printStackTrace();
+            softAssert.assertTrue(false);
         }
     }
 }
+
