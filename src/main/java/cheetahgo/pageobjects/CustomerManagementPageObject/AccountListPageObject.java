@@ -71,9 +71,27 @@ public class AccountListPageObject {
         return element;
     }
 
-    //SAP Code下拉筛选框
+    //SAP Code文本框
     public WebElement SAPCodeInput() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.SAPCodeSelect"));
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.SAPCodeInput"));
+        return element;
+    }
+
+    //日期选择器
+    public WebElement createDatePickers() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.createDatePickers"));
+        return element;
+    }
+
+    //日期筛选器开始时间
+    public WebElement datePickersBegin() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.datePickersBegin"));
+        return element;
+    }
+    //日期选择器结束时间
+
+    public WebElement datePickersEnd() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.datePickersEnd"));
         return element;
     }
 
@@ -172,6 +190,25 @@ public class AccountListPageObject {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeSalesSelect"));
         return element;
     }
+
+    //分配销售确定按钮
+    public WebElement distributeSalesDetermine() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeSalesDetermine"));
+        return element;
+    }
+
+    //分配销售取消按钮
+    public WebElement distributeSalesCancel() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeSalesCancel"));
+        return element;
+    }
+
+    //列表数据单选
+    public WebElement listDataRadio() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.listDataRadio"));
+        return element;
+    }
+
 
     //分配AM功能按钮
     public WebElement distributeAMButton() throws Exception {

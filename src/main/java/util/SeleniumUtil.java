@@ -1,6 +1,7 @@
 package util;
 
 import cheetahgo.constant.Constants;
+import cheetahgo.pageobjects.CustomerManagementPageObject.AccountListPageObject;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.springframework.util.FileCopyUtils;
@@ -117,12 +118,16 @@ public class SeleniumUtil {
     /**
      * 该方法为断言敏感数据
      *
-     * @param webDriver
-     * @param str
+     * @param softAssert 软断言对象
+     * @param webDriver  浏览器驱动对象
+     * @param str        断言字符串对象
+     * @param path       断言div位置xpath路径
+     * @throws AssertionError
+     * @throws InterruptedException
      */
-    public static void softAssertSensitiveContainsPageSource(SoftAssert softAssert, WebDriver webDriver, String str) throws AssertionError, InterruptedException {
+    public static void softAssertSensitiveContainsPageSource(SoftAssert softAssert, WebDriver webDriver, String str, String path) throws AssertionError, InterruptedException {
         Thread.sleep(500);
-        WebElement element = webDriver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/div"));
+        WebElement element = webDriver.findElement(By.xpath(path));
         String str1;
         if (str.length() > 4) {
             str1 = str.substring(0, 2);
@@ -151,10 +156,21 @@ public class SeleniumUtil {
         }
     }
 
-    public static void softAssertContainsPageSourceByIndex(SoftAssert softAssert, WebDriver webDriver, String str, int beginIndex, int endIndex) throws InterruptedException {
+    /**
+     * 根据字符串下标截取后进行断言
+     *
+     * @param softAssert 软断言对象
+     * @param webDriver  web驱动
+     * @param str        断言字符串
+     * @param beginIndex 字符串开始下标
+     * @param endIndex   字符串结束下标
+     * @param path       断言div位置
+     * @throws InterruptedException
+     */
+    public static void softAssertContainsPageSourceByIndex(SoftAssert softAssert, WebDriver webDriver, String str, int beginIndex, int endIndex, String path) throws InterruptedException {
         Thread.sleep(500);
         String subString = str.substring(beginIndex, endIndex);
-        WebElement element = webDriver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/div"));
+        WebElement element = webDriver.findElement(By.xpath(path));
         LogUtil.info("断言页面是否: " + subString);
         if (element.getText().contains(subString)) {
             LogUtil.info("断言: " + str + " 成功!");
@@ -166,18 +182,102 @@ public class SeleniumUtil {
         }
     }
 
-    public static void softAssertContainsPageSource(SoftAssert softAssert, WebDriver webDriver, String str) throws InterruptedException {
+    /**
+     * 直接断言字符串
+     *
+     * @param softAssert
+     * @param webDriver
+     * @param str
+     * @param path
+     * @throws InterruptedException
+     */
+    public static void softAssertContainsPageSource(SoftAssert softAssert, WebDriver webDriver, String str, String path) throws InterruptedException {
         Thread.sleep(500);
-        WebElement element = webDriver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/div"));
-        LogUtil.info("断言页面是否: " + str);
-        if (element.getText().contains(str)) {
-            LogUtil.info("断言: " + str + " 成功!");
+        if (path != null) {
+            WebElement element = webDriver.findElement(By.xpath(path));
+            LogUtil.info("断言页面是否: " + str);
+            if (element.getText().contains(str)) {
+                LogUtil.info("断言: " + str + " 成功!");
+                softAssert.assertTrue(true);
+            } else {
+                LogUtil.info("页面未找到" + str + "断言失败!");
+                SeleniumUtil.takeTakesScreenshot(webDriver);
+                softAssert.assertTrue(false);
+            }
+        } else {
+            LogUtil.info("断言页面是否: " + str);
+            if (webDriver.getPageSource().contains(str)) {
+                LogUtil.info("断言: " + str + " 成功!");
+                softAssert.assertTrue(true);
+            } else {
+                LogUtil.info("页面未找到" + str + "断言失败!");
+                SeleniumUtil.takeTakesScreenshot(webDriver);
+                softAssert.assertTrue(false);
+            }
+        }
+
+    }
+
+    /**
+     * 日期选择器选择日期
+     *
+     * @param datePickersBeginPath
+     * @param datePickersEndPath
+     * @param beginDate
+     * @param endDate
+     * @throws InterruptedException
+     */
+    public static void datePickersSendKeys(WebElement datePickersBeginPath, WebElement datePickersEndPath, String beginDate, String endDate) throws Exception {
+        Thread.sleep(500);
+        datePickersBeginPath.sendKeys(beginDate);
+        datePickersEndPath.sendKeys(endDate);
+    }
+
+    public static void main(String[] args) {
+
+    }
+
+    /**
+     * 断言日期筛选器方法
+     *
+     * @param softAssert
+     * @param webDriver
+     * @param beginDate
+     * @param endDate
+     * @throws InterruptedException
+     */
+    public static void softAssertDatePickersResult(SoftAssert softAssert, WebDriver webDriver, String beginDate, String endDate) throws InterruptedException {
+        if (webDriver.getPageSource().contains(beginDate) && webDriver.getPageSource().contains(endDate)) {
+            LogUtil.info("日期断言成功,页面包含: " + beginDate + "-" + endDate + "之间的日期!");
             softAssert.assertTrue(true);
         } else {
-            LogUtil.info("页面未找到" + str + "断言失败!");
-            SeleniumUtil.takeTakesScreenshot(webDriver);
             softAssert.assertTrue(false);
+            LogUtil.info("日期断言失败,页面不包含: " + beginDate + "-" + endDate + "之间的日期!");
+            SeleniumUtil.takeTakesScreenshot(webDriver);
+
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

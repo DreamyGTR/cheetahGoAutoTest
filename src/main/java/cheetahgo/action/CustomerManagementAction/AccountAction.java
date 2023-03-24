@@ -4,6 +4,7 @@ import cheetahgo.constant.Constants;
 import cheetahgo.pageobjects.CustomerManagementPageObject.AccountListPageObject;
 import cheetahgo.pageobjects.CustomerManagementPageObject.CustomerManagementPageObject;
 import lombok.extern.log4j.Log4j;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
@@ -35,7 +36,7 @@ public class AccountAction {
         LogUtil.info("点击搜索按钮");
         accountListPageObject.selectButton().click();
         LogUtil.info("调用assertContainsPageSource自定义断言方法");
-        SeleniumUtil.softAssertSensitiveContainsPageSource(softAssert, webDriver, Constants.CustomerId);
+        SeleniumUtil.softAssertSensitiveContainsPageSource(softAssert, webDriver, Constants.CustomerId, Constants.AssertCustomerManagementListSelect);
         LogUtil.info("清除文本框内容");
         accountListPageObject.customerId().clear();
         WaitUtil.sleep(500);
@@ -46,7 +47,7 @@ public class AccountAction {
         LogUtil.info("点击搜索按钮");
         accountListPageObject.selectButton().click();
         LogUtil.info("调用assertContainsPageSource自定义断言方法");
-        SeleniumUtil.softAssertSensitiveContainsPageSource(softAssert, webDriver, Constants.UniteSelect);
+        SeleniumUtil.softAssertSensitiveContainsPageSource(softAssert, webDriver, Constants.UniteSelect, Constants.AssertCustomerManagementListSelect);
         LogUtil.info("恢复联合验证下拉框数据");
 
         SeleniumUtil.actionMoveClickRelease(webDriver, "/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/form/div/div[2]/div/div[2]/div/span/div/div/span[1]");
@@ -58,7 +59,7 @@ public class AccountAction {
         LogUtil.info("点击搜索按钮");
         accountListPageObject.selectButton().click();
         LogUtil.info("调用assertContainsPageSource自定义断言方法");
-        SeleniumUtil.softAssertSensitiveContainsPageSource(softAssert, webDriver, Constants.CustomerSAPNameSelect);
+        SeleniumUtil.softAssertSensitiveContainsPageSource(softAssert, webDriver, Constants.CustomerSAPNameSelect, Constants.AssertCustomerManagementListSelect);
         LogUtil.info("恢复SAP客户名称下拉框默认值");
         SeleniumUtil.actionMoveClickRelease(webDriver, "/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/form/div/div[3]/div/div[2]/div/span/div/div/span[1]");
         Thread.sleep(500);
@@ -70,7 +71,7 @@ public class AccountAction {
         accountListPageObject.selectButton().click();
         Thread.sleep(1000);
         LogUtil.info("调用assertContainsPageSource自定义断言方法");
-        SeleniumUtil.softAssertSensitiveContainsPageSource(softAssert, webDriver, Constants.CustomerTypeSelect);
+        SeleniumUtil.softAssertSensitiveContainsPageSource(softAssert, webDriver, Constants.CustomerTypeSelect, Constants.AssertCustomerManagementListSelect);
         LogUtil.info("恢复客户类型下拉框默认值");
         SeleniumUtil.choiceSelect(accountListPageObject.customerTypeSelect(), webDriver, "ant-select-dropdown-menu-item", Constants.defaultSelect);
 
@@ -80,7 +81,7 @@ public class AccountAction {
         LogUtil.info("点击搜索");
         accountListPageObject.selectButton().click();
         LogUtil.info("调用assertContainsPageSource自定义断言方法");
-        SeleniumUtil.softAssertSensitiveContainsPageSource(softAssert, webDriver, Constants.CustomerLevelSelect);
+        SeleniumUtil.softAssertSensitiveContainsPageSource(softAssert, webDriver, Constants.CustomerLevelSelect, Constants.AssertCustomerManagementListSelect);
         LogUtil.info("恢复客户等级下拉框默认值");
         SeleniumUtil.choiceSelect(accountListPageObject.customerLevelSelect(), webDriver, "ant-select-dropdown-menu-item", Constants.defaultSelect);
 
@@ -90,7 +91,7 @@ public class AccountAction {
         LogUtil.info("点击搜索");
         accountListPageObject.selectButton().click();
         LogUtil.info("调用assertContainsPageSource自定义断言方法");
-        SeleniumUtil.softAssertContainsPageSourceByIndex(softAssert, webDriver, Constants.CustomerSalesSelect, 0, 2);
+        SeleniumUtil.softAssertContainsPageSourceByIndex(softAssert, webDriver, Constants.CustomerSalesSelect, 0, 2, Constants.AssertCustomerManagementListSelect);
         LogUtil.info("所属销售下拉框恢复默认值:");
         SeleniumUtil.actionMoveClickRelease(webDriver, "/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/form/div/div[6]/div/div[2]/div/span/div/div/span[1]");
 
@@ -100,7 +101,7 @@ public class AccountAction {
         LogUtil.info("点击搜索按钮");
         accountListPageObject.selectButton().click();
         LogUtil.info("调用assertContainsPageSource自定义断言方法");
-        SeleniumUtil.softAssertContainsPageSourceByIndex(softAssert, webDriver, Constants.CustomerAMSelect, 0, 1);
+        SeleniumUtil.softAssertContainsPageSourceByIndex(softAssert, webDriver, Constants.CustomerAMSelect, 0, 1, Constants.AssertCustomerManagementListSelect);
         LogUtil.info("所属AM下拉框选择恢复默认值");
         SeleniumUtil.actionMoveClickRelease(webDriver, "/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/form/div/div[7]/div/div[2]/div/span/div/div/span[1]");
 
@@ -110,7 +111,7 @@ public class AccountAction {
         LogUtil.info("点击搜索按钮");
         accountListPageObject.selectButton().click();
         LogUtil.info("调用assertContainsPageSource自定义断言方法");
-        SeleniumUtil.softAssertContainsPageSourceByIndex(softAssert, webDriver, Constants.CustomerOptimistSelect, 0, 1);
+        SeleniumUtil.softAssertContainsPageSourceByIndex(softAssert, webDriver, Constants.CustomerOptimistSelect, 0, 1, Constants.AssertCustomerManagementListSelect);
         LogUtil.info("所属优化师下拉框选择恢复默认值");
         SeleniumUtil.actionMoveClickRelease(webDriver, "/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/form/div/div[8]/div/div[2]/div/span/div/div/span[1]");
 
@@ -120,10 +121,20 @@ public class AccountAction {
         LogUtil.info("点击搜索按钮");
         accountListPageObject.selectButton().click();
         LogUtil.info("调用assertContainsPageSource自定义断言方法");
-        SeleniumUtil.softAssertSensitiveContainsPageSource(softAssert, webDriver, Constants.SAPCodeInput);
+        SeleniumUtil.softAssertSensitiveContainsPageSource(softAssert, webDriver, Constants.SAPCodeInput, Constants.AssertCustomerManagementListSelect);
         LogUtil.info("清除SAP Code文本框");
         accountListPageObject.SAPCodeInput().clear();
         Thread.sleep(2000);
+
+        //日期选择器
+        LogUtil.info("点击日期选择器");
+        accountListPageObject.createDatePickers().click();
+        LogUtil.info("日期选择器输入日期时间: ");
+        SeleniumUtil.datePickersSendKeys(accountListPageObject.datePickersBegin(), accountListPageObject.datePickersEnd(), "2023-03-23", "2023-03-23");
+        LogUtil.info("点击搜索按钮");
+        accountListPageObject.selectButton().click();
+        SeleniumUtil.softAssertDatePickersResult(softAssert, webDriver, "2023-03-23", "2023-03-23");
+        Thread.sleep(3000);
     }
 
     /**
@@ -132,7 +143,7 @@ public class AccountAction {
      * @param webDriver
      * @throws Exception
      */
-    public static void CustomerManagementAddCustomerMessageAction(WebDriver webDriver) throws Exception {
+    public static void CustomerManagementAddCustomerMessageAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
         CustomerManagementPageObject customerManagementPageObject = new CustomerManagementPageObject(webDriver);
         AccountListPageObject accountListPageObject = new AccountListPageObject(webDriver);
         customerManagementPageObject.customerManagement().click();
@@ -165,8 +176,9 @@ public class AccountAction {
         } catch (Exception e) {
             LogUtil.info("点击下一步失败,详情请看日志或截图!" + e.getMessage());
             SeleniumUtil.takeTakesScreenshot(webDriver);
-            Assert.assertTrue(false);
+            softAssert.assertTrue(false);
         }
+
         LogUtil.info("联系人手机号文本框输入:" + Constants.TestCustomerPhone);
         SeleniumUtil.coverDivInputSendKeys(webDriver, accountListPageObject.addCustomerContactPhone(), Constants.TestCustomerPhone);
         LogUtil.info("联系人Email文本框输入:" + Constants.TestCustomerEmail);
@@ -174,5 +186,30 @@ public class AccountAction {
         LogUtil.info("点击确定按钮");
         accountListPageObject.addCustomerContactConfirmButton().click();
         WaitUtil.sleep(2000);
+    }
+
+    public static void CustomerManagementCustomerListDistributeSalesAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
+        CustomerManagementPageObject customerManagementPageObject = new CustomerManagementPageObject(webDriver);
+        AccountListPageObject accountListPageObject = new AccountListPageObject(webDriver);
+        customerManagementPageObject.customerManagement().click();
+        customerManagementPageObject.customerList().click();
+        LogUtil.info("==========内部运营平台客户管理-客户列表-分配销售功能自动化测试开始===========");
+        LogUtil.info("点击分配销售按钮");
+        accountListPageObject.distributeSalesButton().click();
+        Thread.sleep(1000);
+        LogUtil.info("多选框必选校验");
+        SeleniumUtil.softAssertContainsPageSource(softAssert, webDriver, "请选择要修改的客户", null);
+        LogUtil.info("选择列表数据");
+        Thread.sleep(500);
+        accountListPageObject.listDataRadio().click();
+        LogUtil.info("点击分配销售按钮");
+        accountListPageObject.distributeSalesButton().click();
+        LogUtil.info("下拉框选择销售: " + "郝燕星<haoyanxing@cmcm.com>");
+        SeleniumUtil.choiceSelect(accountListPageObject.distributeSalesSelect(), webDriver, "ant-select-dropdown-menu-item", "郝燕星<haoyanxing@cmcm.com>");
+        Thread.sleep(1000);
+        LogUtil.info("点击确定按钮");
+        accountListPageObject.distributeSalesCancel().click();
+        SeleniumUtil.softAssertContainsPageSource(softAssert, webDriver, "分配成功", null);
+        Thread.sleep(1000);
     }
 }

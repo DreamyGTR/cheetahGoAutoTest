@@ -31,7 +31,7 @@ public class Constants {
     //内部运营平台-客户管理-测试客户Email
     public static final String TestCustomerEmail = "zhaotianyu19940411@163.com";
     //内部运营平台-客户管理-客户列表-客户ID文本框
-    public static final String CustomerId = "2a3";
+    public static final String CustomerId = "23";
     //内部运营平台-客户管理-客户列表-联合搜索下拉列表
     public static final String UniteSelect = "《环球时报》社有限公司";
     //内部运营平台-客户管理-客户列表-SAP客户名称下拉筛选框
@@ -47,6 +47,7 @@ public class Constants {
     //内部运营平台-客户管理-客户列表-所属优化师下拉筛选框
     public static final String CustomerOptimistSelect = "孙玉<sunyu6@cmcm.com>";
     //内部运营平台-客户管理-客户列表-SAP Code下拉筛选框
-    public static final String SAPCodeInput = "123123213";
-
+    public static final String SAPCodeInput = "111";
+    //内部运营平台-客户管理-客户列表筛选框断言位置
+    public static final String AssertCustomerManagementListSelect = "/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/div";
 }
