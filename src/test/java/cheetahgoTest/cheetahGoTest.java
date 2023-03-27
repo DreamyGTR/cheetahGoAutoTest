@@ -55,14 +55,14 @@ public class cheetahGoTest extends AbstractTestNGSpringContextTests {
     @Test(groups = "CustomerManagement")
     public void testSelect() throws Exception {
         SoftAssert softAssert = new SoftAssert();
-        AccountAction.CustomerManagementSelectAction(softAssert, webDriver);
+        AccountAction.customerManagementCustomerListSelectAction(softAssert, webDriver);
         softAssert.assertAll();
     }
 
     @Test(groups = "CustomerManagement")
     public void addCustomer() throws Exception {
         SoftAssert softAssert = new SoftAssert();
-        AccountAction.CustomerManagementAddCustomerMessageAction(softAssert, webDriver);
+        AccountAction.customerManagementCustomerListAddCustomerMessageAction(softAssert, webDriver);
         try {
             softAssert.assertTrue(webDriver.getPageSource().contains("新增成功"));
             softAssert.assertAll();
@@ -86,11 +86,11 @@ public class cheetahGoTest extends AbstractTestNGSpringContextTests {
         softAssert.assertAll();
     }
 
-//    @Test(groups = "CustomerManagement")
-//    public void distributeSales() throws Exception {
-//        SoftAssert softAssert = new SoftAssert();
-//        AccountAction.CustomerManagementCustomerListDistributeSalesAction(softAssert, webDriver);
-//    }
+    @Test(groups = "CustomerManagement")
+    public void distributeSales() throws Exception {
+        SoftAssert softAssert = new SoftAssert();
+        AccountAction.customerManagementCustomerListDistributeSalesAction(softAssert, webDriver);
+    }
 
     @AfterTest()
     public void addCustomerAfterTest() {
@@ -102,6 +102,6 @@ public class cheetahGoTest extends AbstractTestNGSpringContextTests {
         LogUtil.info("关闭浏览器");
         webDriver.quit();
         LogUtil.info("=============================自动化测试结束===========================");
-        LogUtil.info("\n");
+        LogUtil.info("\\r\\n");
     }
 }

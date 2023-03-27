@@ -204,8 +204,8 @@ public class AccountListPageObject {
     }
 
     //列表数据单选
-    public WebElement listDataRadio() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.listDataRadio"));
+    public WebElement ListDataRadio() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.ListDataRadio"));
         return element;
     }
 
@@ -213,6 +213,23 @@ public class AccountListPageObject {
     //分配AM功能按钮
     public WebElement distributeAMButton() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeAMButton"));
+        return element;
+    }
+
+    //分配AM下拉框
+    public WebElement distributeAMSelect() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeAMSelect"));
+        return element;
+    }
+    //分配AM确定按钮
+    public WebElement distributeAMDetermine() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeAMDetermine"));
+        return element;
+    }
+
+    //分配AM取消按钮
+    public WebElement distributeAMCancel() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeAMCancel"));
         return element;
     }
 

@@ -4,9 +4,7 @@ import cheetahgo.constant.Constants;
 import cheetahgo.pageobjects.CustomerManagementPageObject.AccountListPageObject;
 import cheetahgo.pageobjects.CustomerManagementPageObject.CustomerManagementPageObject;
 import lombok.extern.log4j.Log4j;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 import util.LogUtil;
 import util.SeleniumUtil;
@@ -17,19 +15,32 @@ import util.WaitUtil;
  */
 @Log4j
 public class AccountAction {
+
     /**
-     * 客户管理-客户列表筛选器功能UI自动化场景测试
+     * 封装打开客户管理-客户列表页面操作步骤
+     *
+     * @param softAssert 软断言对象
+     * @param webDriver  浏览器驱动对象
+     * @throws Exception
+     */
+    public static AccountListPageObject openCustomerManagementAndCustomerList(SoftAssert softAssert, WebDriver webDriver) throws Exception {
+        CustomerManagementPageObject customerManagementPageObject = new CustomerManagementPageObject(webDriver);
+        AccountListPageObject accountListPageObject = new AccountListPageObject(webDriver);
+        customerManagementPageObject.customerManagement().click();
+        return accountListPageObject;
+    }
+
+    /**
+     * 客户管理-账户列表-客户列表筛选器功能UI自动化场景测试
      *
      * @param webDriver
      * @throws Exception
      */
-    public static void CustomerManagementSelectAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
-        CustomerManagementPageObject customerManagementPageObject = new CustomerManagementPageObject(webDriver);
-        AccountListPageObject accountListPageObject = new AccountListPageObject(webDriver);
-        customerManagementPageObject.customerManagement().click();
+    public static void customerManagementCustomerListSelectAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
+
         LogUtil.info("========内部运营平台-客户管理-客户列表筛选器自动化测试开始=======");
         WaitUtil.sleep(1000);
-
+        AccountListPageObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
         //验证客户ID文本框
         LogUtil.info("客户ID文本框输入" + Constants.CustomerId);
         accountListPageObject.customerId().sendKeys(Constants.CustomerId);
@@ -138,16 +149,13 @@ public class AccountAction {
     }
 
     /**
-     * 客户管理-新增客户信息场景UI自动化测试
+     * 客户管理-账户列表信息场景UI自动化测试
      *
      * @param webDriver
      * @throws Exception
      */
-    public static void CustomerManagementAddCustomerMessageAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
-        CustomerManagementPageObject customerManagementPageObject = new CustomerManagementPageObject(webDriver);
-        AccountListPageObject accountListPageObject = new AccountListPageObject(webDriver);
-        customerManagementPageObject.customerManagement().click();
-        customerManagementPageObject.customerList().click();
+    public static void customerManagementCustomerListAddCustomerMessageAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
+        AccountListPageObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
         LogUtil.info("==========内部运营平台客户管理-客户列表-新增客户功能自动化测试开始===========");
         log.info(webDriver.getWindowHandle());
         accountListPageObject.addCustomerButton().click();
@@ -188,11 +196,15 @@ public class AccountAction {
         WaitUtil.sleep(2000);
     }
 
-    public static void CustomerManagementCustomerListDistributeSalesAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
-        CustomerManagementPageObject customerManagementPageObject = new CustomerManagementPageObject(webDriver);
-        AccountListPageObject accountListPageObject = new AccountListPageObject(webDriver);
-        customerManagementPageObject.customerManagement().click();
-        customerManagementPageObject.customerList().click();
+    /**
+     * 客户管理-账户列表场景UI自动化测试
+     *
+     * @param softAssert
+     * @param webDriver
+     * @throws Exception
+     */
+    public static void customerManagementCustomerListDistributeSalesAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
+        AccountListPageObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
         LogUtil.info("==========内部运营平台客户管理-客户列表-分配销售功能自动化测试开始===========");
         LogUtil.info("点击分配销售按钮");
         accountListPageObject.distributeSalesButton().click();
@@ -201,14 +213,43 @@ public class AccountAction {
         SeleniumUtil.softAssertContainsPageSource(softAssert, webDriver, "请选择要修改的客户", null);
         LogUtil.info("选择列表数据");
         Thread.sleep(500);
-        accountListPageObject.listDataRadio().click();
+        accountListPageObject.ListDataRadio().click();
         LogUtil.info("点击分配销售按钮");
         accountListPageObject.distributeSalesButton().click();
         LogUtil.info("下拉框选择销售: " + "郝燕星<haoyanxing@cmcm.com>");
         SeleniumUtil.choiceSelect(accountListPageObject.distributeSalesSelect(), webDriver, "ant-select-dropdown-menu-item", "郝燕星<haoyanxing@cmcm.com>");
         Thread.sleep(1000);
         LogUtil.info("点击确定按钮");
-        accountListPageObject.distributeSalesCancel().click();
+        accountListPageObject.distributeSalesDetermine().click();
+        SeleniumUtil.softAssertContainsPageSource(softAssert, webDriver, "分配成功", null);
+        Thread.sleep(1000);
+        customerManagementCustomerListDistributeAMAction(softAssert, webDriver);
+    }
+
+    /**
+     * 客户管理-账户列表-分配AM场景UI自动化测试
+     *
+     * @param softAssert
+     * @param webDriver
+     * @throws Exception
+     */
+    public static void customerManagementCustomerListDistributeAMAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
+        AccountListPageObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
+        LogUtil.info("==========内部运营平台客户管理-客户列表-分配AM功能自动化测试开始===========");
+        LogUtil.info("点击分配AM按钮");
+        accountListPageObject.distributeAMButton().click();
+        LogUtil.info("多选按钮必填校验");
+        SeleniumUtil.softAssertContainsPageSource(softAssert, webDriver, "请选择要修改的客户", null);
+        LogUtil.info("选择列表数据");
+        Thread.sleep(500);
+        accountListPageObject.ListDataRadio().click();
+        LogUtil.info("点击分配AM按钮");
+        accountListPageObject.distributeAMButton().click();
+        LogUtil.info("下拉框选择AM: " + "韩玮瑶<hanweiyao@cmcm.com>");
+        SeleniumUtil.choiceSelect(accountListPageObject.distributeSalesSelect(), webDriver, "ant-select-dropdown-menu-item", "韩玮瑶<hanweiyao@cmcm.com>");
+        Thread.sleep(1000);
+        LogUtil.info("点击确定按钮");
+        accountListPageObject.distributeSalesDetermine().click();
         SeleniumUtil.softAssertContainsPageSource(softAssert, webDriver, "分配成功", null);
         Thread.sleep(1000);
     }
