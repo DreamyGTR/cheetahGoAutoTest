@@ -221,6 +221,7 @@ public class AccountListPageObject {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeAMSelect"));
         return element;
     }
+
     //分配AM确定按钮
     public WebElement distributeAMDetermine() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeAMDetermine"));
@@ -236,6 +237,24 @@ public class AccountListPageObject {
     //分配优化师功能按钮
     public WebElement distributeOptimistButton() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeOptimistButton"));
+        return element;
+    }
+
+    //分配优化师下拉框
+    public WebElement distributeOptimistSelect() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeOptimistSelect"));
+        return element;
+    }
+
+    //分配优化师确定按钮
+    public WebElement distributeOptimistDetermine() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeOptimistDetermine"));
+        return element;
+    }
+
+    //分配优化师取消按钮
+    public WebElement distributeOptimistCancel() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.distributeOptimistCancel"));
         return element;
     }
 

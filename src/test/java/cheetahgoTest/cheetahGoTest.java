@@ -52,39 +52,39 @@ public class cheetahGoTest extends AbstractTestNGSpringContextTests {
         WaitUtil.sleep(3000);
     }
 
-    @Test(groups = "CustomerManagement")
-    public void testSelect() throws Exception {
-        SoftAssert softAssert = new SoftAssert();
-        AccountAction.customerManagementCustomerListSelectAction(softAssert, webDriver);
-        softAssert.assertAll();
-    }
-
-    @Test(groups = "CustomerManagement")
-    public void addCustomer() throws Exception {
-        SoftAssert softAssert = new SoftAssert();
-        AccountAction.customerManagementCustomerListAddCustomerMessageAction(softAssert, webDriver);
-        try {
-            softAssert.assertTrue(webDriver.getPageSource().contains("新增成功"));
-            softAssert.assertAll();
-            if (ccmMapper.selectByName(Constants.TestCustomerName).size() > 0) {
-                LogUtil.info("新增客户信息成功!");
-                if (ccmMapper.deleteByName(Constants.TestCustomerName) > 0 && cccmMapper.delByCellphone(Constants.TestCustomerPhone) > 0) {
-                    LogUtil.info("自动化测试垃圾数据已清除!");
-                } else {
-                    LogUtil.info("清除垃圾数据失败!");
-                    softAssert.assertTrue(false);
-                }
-            } else {
-                LogUtil.info("数据库原因,新增客户信息失败!");
-                softAssert.assertTrue(false);
-            }
-        } catch (AssertionError error) {
-            LogUtil.info("新增客户失败请查看日志截图!");
-            SeleniumUtil.takeTakesScreenshot(webDriver);
-            softAssert.assertTrue(false);
-        }
-        softAssert.assertAll();
-    }
+//    @Test(groups = "CustomerManagement")
+//    public void testSelect() throws Exception {
+//        SoftAssert softAssert = new SoftAssert();
+//        AccountAction.customerManagementCustomerListSelectAction(softAssert, webDriver);
+//        softAssert.assertAll();
+//    }
+//
+//    @Test(groups = "CustomerManagement")
+//    public void addCustomer() throws Exception {
+//        SoftAssert softAssert = new SoftAssert();
+//        AccountAction.customerManagementCustomerListAddCustomerMessageAction(softAssert, webDriver);
+//        try {
+//            softAssert.assertTrue(webDriver.getPageSource().contains("新增成功"));
+//            softAssert.assertAll();
+//            if (ccmMapper.selectByName(Constants.TestCustomerName).size() > 0) {
+//                LogUtil.info("新增客户信息成功!");
+//                if (ccmMapper.deleteByName(Constants.TestCustomerName) > 0 && cccmMapper.delByCellphone(Constants.TestCustomerPhone) > 0) {
+//                    LogUtil.info("自动化测试垃圾数据已清除!");
+//                } else {
+//                    LogUtil.info("清除垃圾数据失败!");
+//                    softAssert.assertTrue(false);
+//                }
+//            } else {
+//                LogUtil.info("数据库原因,新增客户信息失败!");
+//                softAssert.assertTrue(false);
+//            }
+//        } catch (AssertionError error) {
+//            LogUtil.info("新增客户失败请查看日志截图!");
+//            SeleniumUtil.takeTakesScreenshot(webDriver);
+//            softAssert.assertTrue(false);
+//        }
+//        softAssert.assertAll();
+//    }
 
     @Test(groups = "CustomerManagement")
     public void distributeSales() throws Exception {

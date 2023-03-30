@@ -224,6 +224,7 @@ public class AccountAction {
         SeleniumUtil.softAssertContainsPageSource(softAssert, webDriver, "分配成功", null);
         Thread.sleep(1000);
         customerManagementCustomerListDistributeAMAction(softAssert, webDriver);
+        customerManagementCustomerListDistributeOptimistAction(softAssert, webDriver);
     }
 
     /**
@@ -253,4 +254,52 @@ public class AccountAction {
         SeleniumUtil.softAssertContainsPageSource(softAssert, webDriver, "分配成功", null);
         Thread.sleep(1000);
     }
+
+    /**
+     * 客户管理-账户列表-分配优化师场景UI自动化测试
+     *
+     * @param softAssert
+     * @param webDriver
+     */
+    public static void customerManagementCustomerListDistributeOptimistAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
+        AccountListPageObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
+        LogUtil.info("==========内部运营平台客户管理-客户列表-配优化师场景UI自动化测试开始===========");
+        LogUtil.info("点击分配优化师按钮");
+        accountListPageObject.distributeOptimistButton().click();
+        LogUtil.info("多选按钮必填校验");
+        SeleniumUtil.softAssertContainsPageSource(softAssert, webDriver, "请选择要修改的客户", null);
+        LogUtil.info("选择列表数据");
+        Thread.sleep(500);
+        accountListPageObject.ListDataRadio().click();
+        LogUtil.info("点击分配优化师按钮");
+        accountListPageObject.distributeOptimistButton().click();
+        LogUtil.info("下拉框选择AM: " + "杜涵<duhan@cmcm.com>");
+        SeleniumUtil.choiceSelect(accountListPageObject.distributeOptimistSelect(), webDriver, "ant-select-dropdown-menu-item", "杜涵<duhan@cmcm.com>");
+        Thread.sleep(1000);
+        LogUtil.info("点击确定按钮");
+        accountListPageObject.distributeOptimistDetermine().click();
+        SeleniumUtil.softAssertContainsPageSource(softAssert, webDriver, "分配成功", null);
+        Thread.sleep(1000);
+    }
+
+    /**
+     * 客户管理-账户列表-绑定SAP CodeUI场景自动化测试
+     *
+     * @param softAssert
+     * @param webDriver
+     */
+    public static void customerManagementCustomerListBinDingSAPCodeAction(SoftAssert softAssert, WebDriver webDriver) {
+
+    }
+
+    /**
+     * 客户管理-账户列表-下载功能UI场景自动化测试
+     *
+     * @param softAssert
+     * @param webDriver
+     */
+    public static void customerManagementCustomerListDownLoad(SoftAssert softAssert, WebDriver webDriver) {
+
+    }
+
 }

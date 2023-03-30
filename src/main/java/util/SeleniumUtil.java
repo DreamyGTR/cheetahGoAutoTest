@@ -195,7 +195,7 @@ public class SeleniumUtil {
         Thread.sleep(500);
         if (path != null) {
             WebElement element = webDriver.findElement(By.xpath(path));
-            LogUtil.info("断言页面是否: " + str);
+            LogUtil.info("断言页面是否包含: " + str);
             if (element.getText().contains(str)) {
                 LogUtil.info("断言: " + str + " 成功!");
                 softAssert.assertTrue(true);
@@ -205,7 +205,7 @@ public class SeleniumUtil {
                 softAssert.assertTrue(false);
             }
         } else {
-            LogUtil.info("断言页面是否: " + str);
+            LogUtil.info("断言页面是否包含: " + str);
             if (webDriver.getPageSource().contains(str)) {
                 LogUtil.info("断言: " + str + " 成功!");
                 softAssert.assertTrue(true);
