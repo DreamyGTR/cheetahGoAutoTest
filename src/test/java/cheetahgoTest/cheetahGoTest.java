@@ -89,7 +89,8 @@ public class cheetahGoTest extends AbstractTestNGSpringContextTests {
     @Test(groups = "CustomerManagement")
     public void distributeSales() throws Exception {
         SoftAssert softAssert = new SoftAssert();
-        AccountAction.customerManagementCustomerListDistributeSalesAction(softAssert, webDriver);
+        AccountAction.customerManagementCustomerListLookFinancialInformation(softAssert, webDriver);
+        softAssert.assertAll();
     }
 
     @AfterTest()

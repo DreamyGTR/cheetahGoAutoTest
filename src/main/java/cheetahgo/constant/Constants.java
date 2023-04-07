@@ -50,4 +50,7 @@ public class Constants {
     public static final String SAPCodeInput = "111";
     //内部运营平台-客户管理-客户列表筛选框断言位置
     public static final String AssertCustomerManagementListSelect = "/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/div";
+    //内部运营平台-客户管理-客户列表编辑财务信息测试变量
+    public static final String EditFinancialInformationTestData = "1";
+
 }

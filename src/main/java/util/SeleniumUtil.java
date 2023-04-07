@@ -98,7 +98,7 @@ public class SeleniumUtil {
             //生成日期对象
             Date date = new Date();
             //调用DateUtil类中的方法,生成截图所在的文件夹的名称
-            String picDir = "d:\\" + String.valueOf(DateUtil.getYear(date)) + "-"
+            String picDir = "d:\\seleniumLog-" + String.valueOf(DateUtil.getYear(date)) + "-"
                     + String.valueOf(DateUtil.getMonth(date) + "-" + String.valueOf(DateUtil.getDay(date)));
             if (!new File(picDir).exists()) {
                 FileUtil.createDir(picDir);
@@ -257,7 +257,20 @@ public class SeleniumUtil {
 
         }
     }
+
+
+    public static String choiceHandle(WebDriver webDriver, String str) {
+        String originalHandle = webDriver.getWindowHandle();
+        for (String handle : webDriver.getWindowHandles()) {
+            webDriver.switchTo().window(handle);
+            if (webDriver.getTitle().equals(str)) {
+
+            }
+        }
+        return originalHandle;
+    }
 }
+
 
 
 

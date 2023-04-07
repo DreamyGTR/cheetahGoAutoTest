@@ -82,7 +82,7 @@ public class AccountListPageObject {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.createDatePickers"));
         return element;
     }
-
+    
     //日期筛选器开始时间
     public WebElement datePickersBegin() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.datePickersBegin"));
@@ -265,7 +265,7 @@ public class AccountListPageObject {
     }
 
     //下载按钮
-    public WebElement downLoadButtonButton() throws Exception {
+    public WebElement downLoadButton() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.downLoadButton"));
         return element;
     }
@@ -276,9 +276,21 @@ public class AccountListPageObject {
         return element;
     }
 
+    //查看财务信息弹窗关闭按钮
+    public WebElement selectFinancialInformationCloseButton() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.selectFinancialInformationCloseButton"));
+        return element;
+    }
+
     //查看联系人信息
     public WebElement selectContactInformation() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.selectContactInformation"));
+        return element;
+    }
+
+    //查看联系人信息弹窗关闭按钮
+    public WebElement selectContactInformationCloseButton() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.selectContactInformationCloseButton"));
         return element;
     }
 
@@ -288,15 +300,81 @@ public class AccountListPageObject {
         return element;
     }
 
+    //编辑客户信息下一步确认按钮
+    public WebElement editCustomerInformationDefineNextStep() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.editCustomerInformationDefineNextStep"));
+        return element;
+    }
+
+    //编辑客户信息确认按钮
+    public WebElement editCustomerInformationDefine() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.editCustomerInformationDefine"));
+        return element;
+    }
+
     //编辑财务信息
     public WebElement editFinancialInformation() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.editFinancialInformation"));
         return element;
     }
 
+    //编辑财务信息确认按钮
+    public WebElement editFinancialInformationDetermineButton() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.editFinancialInformationDetermineButton"));
+        return element;
+    }
+
+    //编辑财务信息发票抬头(签约主体文本框)
+    public WebElement editFinancialInformationInvoiceHeader() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.editFinancialInformationInvoiceHeader"));
+        return element;
+    }
+
+    //编辑财务信息媒体文本框
+    public WebElement editFinancialInformationInvoiceHeaderMedia() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.editFinancialInformationInvoiceHeaderMedia"));
+        return element;
+    }
+
+    //编辑财务信息发票项目文本框
+    public WebElement editFinancialInformationInvoiceItem() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.editFinancialInformationInvoiceItem"));
+        return element;
+    }
+
+    //编辑财务信息Account No文本框
+    public WebElement editFinancialInformationAccountNo() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.editFinancialInformationAccountNo"));
+        return element;
+    }
+
     //编辑联系人信息
     public WebElement editContactInformation() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.editContactInformation"));
+        return element;
+    }
+
+    //编辑联系人信息-姓名
+    public WebElement editContactInformationName() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.editContactInformationName"));
+        return element;
+    }
+
+    //编辑联系人信息-手机号
+    public WebElement editContactInformationPhone() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.editContactInformationPhone"));
+        return element;
+    }
+
+    //编辑联系人信息-Email
+    public WebElement editContactInformationEmail() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.editContactInformationEmail"));
+        return element;
+    }
+
+    //编辑联系人信息-Email
+    public WebElement editContactInformationConfirmButton() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.editContactInformationConfirmButton"));
         return element;
     }
 
@@ -311,4 +389,5 @@ public class AccountListPageObject {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.updateTimeLink"));
         return element;
     }
+
 }
