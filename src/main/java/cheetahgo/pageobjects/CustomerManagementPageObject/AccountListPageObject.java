@@ -82,7 +82,7 @@ public class AccountListPageObject {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.createDatePickers"));
         return element;
     }
-    
+
     //日期筛选器开始时间
     public WebElement datePickersBegin() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerManagement.datePickersBegin"));

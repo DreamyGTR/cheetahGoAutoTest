@@ -52,5 +52,7 @@ public class Constants {
     public static final String AssertCustomerManagementListSelect = "/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/div";
     //内部运营平台-客户管理-客户列表编辑财务信息测试变量
     public static final String EditFinancialInformationTestData = "1";
+    //内部运营平台-客户管理-账户列表-FaceBook列表Properties文件路径
+    public static final String CustomerBillFaceBookList = "D:\\gitTest\\cheetahGoAutoTest\\sshLinux\\cheetahGoAutoTest\\src\\main\\resources\\cheetahgo\\CustomerBillFaceBookList.properties";
 
 }

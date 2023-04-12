@@ -14,8 +14,6 @@ import util.LogUtil;
 import util.SeleniumUtil;
 import util.WaitUtil;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * 内部运营平台-客户管理-账户列表页面场景自动化测试
  */
@@ -322,33 +320,33 @@ public class AccountAction {
      */
     public static void customerManagementCustomerListLookFinancialInformation(SoftAssert softAssert, WebDriver webDriver) throws Exception {
         AccountListPageObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
-//        //查看财务信息
-//        LogUtil.info("点击查看财务信息");
-//        accountListPageObject.selectFinancialInformation().click();
-//        Thread.sleep(500);
-//        LogUtil.info("关闭财务信息弹窗");
-//        accountListPageObject.selectFinancialInformationCloseButton().click();
-//        Thread.sleep(1000);
-//
-//        //查看联系人信息
-//        LogUtil.info("点击查看联系人信息");
-//        accountListPageObject.selectContactInformation().click();
-//        Thread.sleep(500);
-//        LogUtil.info("关闭查看联系人信息弹窗");
-//        accountListPageObject.selectContactInformationCloseButton().click();
-//        Thread.sleep(1000);
-//
-//        //编辑客户按钮
-//        LogUtil.info("点击编辑客户信息按钮");
-//        accountListPageObject.editCustomerInformation().click();
-//        Thread.sleep(2000);
-//        LogUtil.info("点击下一步按钮");
-//        SeleniumUtil.actionMoveClickRelease(webDriver, accountListPageObject.editCustomerInformationDefineNextStep());
-//        Thread.sleep(500);
-//        LogUtil.info("点击确定按钮");
-//        SeleniumUtil.actionMoveClickRelease(webDriver, accountListPageObject.editCustomerInformationDefine());
-//        SeleniumUtil.softAssertContainsPageSource(softAssert, webDriver, "编辑成功", null);
-//        Thread.sleep(2000);
+        //查看财务信息
+        LogUtil.info("点击查看财务信息");
+        accountListPageObject.selectFinancialInformation().click();
+        Thread.sleep(500);
+        LogUtil.info("关闭财务信息弹窗");
+        accountListPageObject.selectFinancialInformationCloseButton().click();
+        Thread.sleep(1000);
+
+        //查看联系人信息
+        LogUtil.info("点击查看联系人信息");
+        accountListPageObject.selectContactInformation().click();
+        Thread.sleep(500);
+        LogUtil.info("关闭查看联系人信息弹窗");
+        accountListPageObject.selectContactInformationCloseButton().click();
+        Thread.sleep(1000);
+
+        //编辑客户按钮
+        LogUtil.info("点击编辑客户信息按钮");
+        accountListPageObject.editCustomerInformation().click();
+        Thread.sleep(2000);
+        LogUtil.info("点击下一步按钮");
+        SeleniumUtil.actionMoveClickRelease(webDriver, accountListPageObject.editCustomerInformationDefineNextStep());
+        Thread.sleep(500);
+        LogUtil.info("点击确定按钮");
+        SeleniumUtil.actionMoveClickRelease(webDriver, accountListPageObject.editCustomerInformationDefine());
+        SeleniumUtil.softAssertContainsPageSource(softAssert, webDriver, "编辑成功", null);
+        Thread.sleep(2000);
 
         //编辑财务信息
         LogUtil.info("点击编辑财务信息按钮");
@@ -401,17 +399,13 @@ public class AccountAction {
             accountListPageObject.editContactInformationEmail().clear();
             LogUtil.info("联系人Email文本框输入: zhaotianyu@163.com");
             accountListPageObject.editContactInformationEmail().sendKeys("zhaotianyu@163.com");
-            WebDriverWait wait = new WebDriverWait(webDriver, 10);
-            wait.until(ExpectedConditions.visibilityOf(accountListPageObject.editContactInformationConfirmButton()));
             LogUtil.info("点击确定按钮");
-            wait.until(ExpectedConditions.visibilityOf(accountListPageObject.editContactInformationConfirmButton()));
             SeleniumUtil.actionMoveClickRelease(webDriver, accountListPageObject.editContactInformationConfirmButton());
             LogUtil.info("切换回主页面");
             SeleniumUtil.softAssertContainsPageSource(softAssert, webDriver, "编辑成功", null);
             softAssert.assertAll();
         }
         webDriver.switchTo().window(originalHandle);
-
     }
 }
 
