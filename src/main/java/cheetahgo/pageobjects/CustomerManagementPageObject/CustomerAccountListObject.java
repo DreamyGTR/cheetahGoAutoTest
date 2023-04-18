@@ -6,14 +6,14 @@ import org.openqa.selenium.WebElement;
 import util.PropertiesMapUtil;
 
 /**
- * 内部运营平台客户管理-账号列表二级菜单页面元素封装类
+ * 内部运营平台客户管理-客户列表二级菜单页面元素封装类
  */
-public class AccountListPageObject {
+public class CustomerAccountListObject {
     private WebElement element = null;
     private PropertiesMapUtil objectMap = new PropertiesMapUtil(Constants.AccountListPageProperties);
     private WebDriver webDriver;
 
-    public AccountListPageObject(WebDriver webDriver) throws Exception {
+    public CustomerAccountListObject(WebDriver webDriver) throws Exception {
         this.webDriver = webDriver;
     }
 

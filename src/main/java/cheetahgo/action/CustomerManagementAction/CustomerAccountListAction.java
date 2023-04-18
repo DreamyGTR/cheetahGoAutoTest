@@ -1,10 +1,9 @@
 package cheetahgo.action.CustomerManagementAction;
 
 import cheetahgo.constant.Constants;
-import cheetahgo.pageobjects.CustomerManagementPageObject.AccountListPageObject;
+import cheetahgo.pageobjects.CustomerManagementPageObject.CustomerAccountListObject;
 import cheetahgo.pageobjects.CustomerManagementPageObject.CustomerManagementPageObject;
 import lombok.extern.log4j.Log4j;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,10 +14,10 @@ import util.SeleniumUtil;
 import util.WaitUtil;
 
 /**
- * 内部运营平台-客户管理-账户列表页面场景自动化测试
+ * 内部运营平台-客户管理-客户列表页面场景自动化测试
  */
 @Log4j
-public class AccountAction {
+public class CustomerAccountListAction {
 
     /**
      * 封装打开客户管理-客户列表页面操作步骤
@@ -27,9 +26,9 @@ public class AccountAction {
      * @param webDriver  浏览器驱动对象
      * @throws Exception
      */
-    public static AccountListPageObject openCustomerManagementAndCustomerList(SoftAssert softAssert, WebDriver webDriver) throws Exception {
+    public static CustomerAccountListObject openCustomerManagementAndCustomerList(SoftAssert softAssert, WebDriver webDriver) throws Exception {
         CustomerManagementPageObject customerManagementPageObject = new CustomerManagementPageObject(webDriver);
-        AccountListPageObject accountListPageObject = new AccountListPageObject(webDriver);
+        CustomerAccountListObject accountListPageObject = new CustomerAccountListObject(webDriver);
         customerManagementPageObject.customerManagement().click();
         return accountListPageObject;
     }
@@ -44,7 +43,7 @@ public class AccountAction {
 
         LogUtil.info("========内部运营平台-客户管理-客户列表筛选器自动化测试开始=======");
         WaitUtil.sleep(1000);
-        AccountListPageObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
+        CustomerAccountListObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
         //验证客户ID文本框
         LogUtil.info("客户ID文本框输入" + Constants.CustomerId);
         accountListPageObject.customerId().sendKeys(Constants.CustomerId);
@@ -159,7 +158,7 @@ public class AccountAction {
      * @throws Exception
      */
     public static void customerManagementCustomerListAddCustomerMessageAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
-        AccountListPageObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
+        CustomerAccountListObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
         LogUtil.info("==========内部运营平台客户管理-客户列表-新增客户功能自动化测试开始===========");
         log.info(webDriver.getWindowHandle());
         accountListPageObject.addCustomerButton().click();
@@ -208,7 +207,7 @@ public class AccountAction {
      * @throws Exception
      */
     public static void customerManagementCustomerListDistributeSalesAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
-        AccountListPageObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
+        CustomerAccountListObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
         LogUtil.info("==========内部运营平台客户管理-客户列表-分配销售功能自动化测试开始===========");
         LogUtil.info("点击分配销售按钮");
         accountListPageObject.distributeSalesButton().click();
@@ -240,7 +239,7 @@ public class AccountAction {
      * @throws Exception
      */
     public static void customerManagementCustomerListDistributeAMAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
-        AccountListPageObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
+        CustomerAccountListObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
         LogUtil.info("==========内部运营平台客户管理-客户列表-分配AM功能自动化测试开始===========");
         LogUtil.info("点击分配AM按钮");
         accountListPageObject.distributeAMButton().click();
@@ -267,7 +266,7 @@ public class AccountAction {
      * @param webDriver
      */
     public static void customerManagementCustomerListDistributeOptimistAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
-        AccountListPageObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
+        CustomerAccountListObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
         LogUtil.info("==========内部运营平台客户管理-客户列表-配优化师场景UI自动化测试开始===========");
         LogUtil.info("点击分配优化师按钮");
         accountListPageObject.distributeOptimistButton().click();
@@ -294,7 +293,7 @@ public class AccountAction {
      * @param webDriver
      */
     public static void customerManagementCustomerListBinDingSAPCodeAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
-        AccountListPageObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
+        CustomerAccountListObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
 
     }
 
@@ -305,7 +304,7 @@ public class AccountAction {
      * @param webDriver
      */
     public static void customerManagementCustomerListDownLoad(SoftAssert softAssert, WebDriver webDriver) throws Exception {
-        AccountListPageObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
+        CustomerAccountListObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
         LogUtil.info("点击下载按钮");
         accountListPageObject.downLoadButton().click();
         Thread.sleep(5000);
@@ -319,7 +318,7 @@ public class AccountAction {
      * @throws Exception
      */
     public static void customerManagementCustomerListLookFinancialInformation(SoftAssert softAssert, WebDriver webDriver) throws Exception {
-        AccountListPageObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
+        CustomerAccountListObject accountListPageObject = openCustomerManagementAndCustomerList(softAssert, webDriver);
         //查看财务信息
         LogUtil.info("点击查看财务信息");
         accountListPageObject.selectFinancialInformation().click();

@@ -1,11 +1,8 @@
 package util;
 
-import cheetahgo.constant.Constants;
-import cheetahgo.pageobjects.CustomerManagementPageObject.AccountListPageObject;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.springframework.util.FileCopyUtils;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import java.io.File;
