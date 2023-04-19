@@ -19,7 +19,7 @@ public class Constants {
     //内部运营平台-客户管理页面Properties文件路径
     public static final String CustomerManagementPageProperties = "D:\\gitTest\\cheetahGoAutoTest\\sshLinux\\cheetahGoAutoTest\\src\\main\\resources\\cheetahgo\\CustomerManagementPageObject.properties";
     //内部运营平台-客户管理-账户列表Properties文件路径
-    public static final String AccountListPageProperties = "D:\\gitTest\\cheetahGoAutoTest\\sshLinux\\cheetahGoAutoTest\\src\\main\\resources\\cheetahgo\\AccountListPageObject.properties";
+    public static final String CustomerAccountListProperties = "D:\\gitTest\\cheetahGoAutoTest\\sshLinux\\cheetahGoAutoTest\\src\\main\\resources\\cheetahgo\\CustomerListObject.properties";
     //内部运营平台-下拉框默认选项
     public static final String defaultSelect = "全部";
     //内部运营平台-客户管理-测试客户姓名
@@ -53,6 +53,6 @@ public class Constants {
     //内部运营平台-客户管理-客户列表编辑财务信息测试变量
     public static final String EditFinancialInformationTestData = "1";
     //内部运营平台-客户管理-账户列表-FaceBook列表Properties文件路径
-    public static final String CustomerBillFaceBookList = "D:\\gitTest\\cheetahGoAutoTest\\sshLinux\\cheetahGoAutoTest\\src\\main\\resources\\cheetahgo\\CustomerBillFaceBookList.properties";
+    public static final String CustomerBillFaceBookList = "D:\\gitTest\\cheetahGoAutoTest\\sshLinux\\cheetahGoAutoTest\\src\\main\\resources\\cheetahgo\\AccountListFaceBookList.properties";
 
 }
