@@ -54,5 +54,7 @@ public class Constants {
     public static final String EditFinancialInformationTestData = "1";
     //内部运营平台-客户管理-账户列表-FaceBook列表Properties文件路径
     public static final String CustomerBillFaceBookList = "D:\\gitTest\\cheetahGoAutoTest\\sshLinux\\cheetahGoAutoTest\\src\\main\\resources\\cheetahgo\\AccountListFaceBookList.properties";
+    //内部运营平台-客户管理-合作管理Properties文件路径
+    public static final String CooperativeManagement = "D:\\gitTest\\cheetahGoAutoTest\\sshLinux\\cheetahGoAutoTest\\src\\main\\resources\\cheetahgo\\CooperativeManagement.properties";
 
 }

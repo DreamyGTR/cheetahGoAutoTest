@@ -1,5 +1,6 @@
 package cheetahgoTest;
 
+import cheetahgo.action.CustomerManagementAction.CooperativeManagementAction;
 import cheetahgo.action.CustomerManagementAction.CustomerBillFaceBookListAction;
 import cheetahgo.action.LoginAction;
 import cheetahgo.cheetahGoAutoTestApplication;
@@ -88,7 +89,7 @@ public class cheetahGoTest extends AbstractTestNGSpringContextTests {
     @Test(groups = "CustomerManagement")
     public void distributeSales() throws Exception {
         SoftAssert softAssert = new SoftAssert();
-        CustomerBillFaceBookListAction.selectAction(softAssert, webDriver);
+        CooperativeManagementAction.selectAction(softAssert, webDriver);
         softAssert.assertAll();
     }
 
