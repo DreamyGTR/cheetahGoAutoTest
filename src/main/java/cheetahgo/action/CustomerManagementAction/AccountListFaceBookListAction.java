@@ -11,7 +11,7 @@ import util.SeleniumUtil;
 /**
  * 内部运营平台-客户管理-账户列表页面场景自动化测试
  */
-public class CustomerBillFaceBookListAction {
+public class AccountListFaceBookListAction {
 
     /**
      * 进入客户管理-账户列表-FaceBook列表页面

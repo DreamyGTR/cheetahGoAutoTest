@@ -1,10 +1,11 @@
 package cheetahgo.action.CustomerManagementAction;
 
-import cheetahgo.pageobjects.CustomerManagementPageObject.AccountListFaceBookListObject;
 import cheetahgo.pageobjects.CustomerManagementPageObject.CooperativeManagementObject;
 import cheetahgo.pageobjects.CustomerManagementPageObject.CustomerManagementPageObject;
-import org.apache.poi.ss.formula.functions.T;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import util.SeleniumUtil;
 
@@ -27,12 +28,57 @@ public class CooperativeManagementAction {
         Thread.sleep(1000);
         return cooperativeManagementObject;
     }
-
+    
+    /**
+     * 内部运营平台-合作管理-筛选器自动化测试
+     *
+     * @param softAssert
+     * @param webDriver
+     * @throws Exception
+     */
     public static void selectAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
         CooperativeManagementObject cooperativeManagementObject = openCooperativeManagement(webDriver, softAssert);
-        SeleniumUtil.choiceSelect(cooperativeManagementObject.FederatedSearch(), webDriver, "ant-select-dropdown-menu-item", "Jollychic Ec Limited");
-        cooperativeManagementObject.Search().click();
-        Thread.sleep(2000);
+        WebDriverWait wait = new WebDriverWait(webDriver, 10); // 等待10秒
+        //联合搜索下拉框
+        SeleniumUtil.choiceSelect(cooperativeManagementObject.federatedSearch(), webDriver, "ant-select-dropdown-menu-item", "Jollychic Ec Limited");
+        cooperativeManagementObject.search().click();
+        SeleniumUtil.actionMoveClickRelease(webDriver, "/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/form/div/div[1]/div/div[2]/div/span/div/div/span[1]/i");
+
+
+        //SAP客户名称下拉框
+        SeleniumUtil.choiceSelect(cooperativeManagementObject.sAPCustomerName(), webDriver, "ant-select-dropdown-menu-item", "《环球时报》社有限公司");
+        cooperativeManagementObject.search().click();
+        SeleniumUtil.actionMoveClickRelease(webDriver, "/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/form/div/div[2]/div/div[2]/div/span/div/div/span[1]/i");
+
+        //所属销售下拉框
+        SeleniumUtil.choiceSelect(cooperativeManagementObject.sales(), webDriver, "ant-select-dropdown-menu-item", "李薇薇 <liweiwei@cmcm.com>");
+        Thread.sleep(1000);
+        cooperativeManagementObject.search().click();
+        SeleniumUtil.actionMoveClickRelease(webDriver, "/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/form/div/div[3]/div/div[2]/div/span/div/div/span[1]/i");
+
+        //所属AM下拉框
+        SeleniumUtil.choiceSelect(cooperativeManagementObject.aM(), webDriver, "ant-select-dropdown-menu-item", "梁贤<liangxian@cmcm.com>");
+        cooperativeManagementObject.search().click();
+        SeleniumUtil.actionMoveClickRelease(webDriver, "/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/form/div/div[4]/div/div[2]/div/span/div/div/span[1]/i");
+
+        //所属优化师下拉框
+        SeleniumUtil.choiceSelect(cooperativeManagementObject.optimist(), webDriver, "ant-select-dropdown-menu-item", "杜涵<duhan@cmcm.com>");
+        cooperativeManagementObject.search().click();
+        SeleniumUtil.actionMoveClickRelease(webDriver, "/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/form/div/div[5]/div/div[2]/div/span/div/div/span[1]/i");
+
+        //客户类别下拉框
+        SeleniumUtil.choiceSelect(cooperativeManagementObject.customerType(), webDriver, "ant-select-dropdown-menu-item", "预付充值");
+        webDriver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/form/div/div[6]/div/div[1]/label")).click();
+        wait.until(ExpectedConditions.visibilityOf(cooperativeManagementObject.search()));
+        cooperativeManagementObject.search().click();
+
+        //合作开始时间选择器
+        cooperativeManagementObject.cooperationStartTime().click();
+        Thread.sleep(1000);
+        SeleniumUtil.datePickersSendKeys(cooperativeManagementObject.cooperationStartTimeBegin(), cooperativeManagementObject.cooperationStartTimeEnd(), "2022-06-08", "2022-08-08");
+        cooperativeManagementObject.search().click();
+
+        Thread.sleep(3000);
 
     }
 }

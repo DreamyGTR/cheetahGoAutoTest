@@ -1,7 +1,6 @@
 package cheetahgoTest;
 
 import cheetahgo.action.CustomerManagementAction.CooperativeManagementAction;
-import cheetahgo.action.CustomerManagementAction.CustomerBillFaceBookListAction;
 import cheetahgo.action.LoginAction;
 import cheetahgo.cheetahGoAutoTestApplication;
 import cheetahgo.constant.Constants;

@@ -42,7 +42,7 @@ public class SeleniumUtil {
     public static void choiceSelect(WebElement element, WebDriver webDriver, String elementsName, int index) {
         element.click();
         WaitUtil.sleep(2000);
-        List<WebElement> elements = webDriver.findElements(By.className(elementsName));
+        List<WebElement> elements = webDriver.findElements(By.xpath(elementsName));
         elements.get(index).click();
     }
 
@@ -53,12 +53,15 @@ public class SeleniumUtil {
      * @param elementsName
      */
     public static void actionMoveClickRelease(WebDriver webDriver, String elementsName) {
-        WaitUtil.sleep(500);
+        WaitUtil.sleep(300);
         Actions action = new Actions(webDriver);
         WebElement element = webDriver.findElement(By.xpath(elementsName));
         action.moveToElement(element).perform();
+        WaitUtil.sleep(300);
         action.clickAndHold().perform();
+        WaitUtil.sleep(300);
         action.release().perform();
+        WaitUtil.sleep(300);
     }
 
     /**
