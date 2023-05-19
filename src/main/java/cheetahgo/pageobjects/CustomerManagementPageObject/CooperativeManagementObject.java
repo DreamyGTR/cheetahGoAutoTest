@@ -219,4 +219,62 @@ public class CooperativeManagementObject {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.CooperativeManagement.EditCollaborationRecord"));
         return element;
     }
+
+    public static class DijkstraAlgorithm {
+        public static void main(String[] args) {
+            int INF = Integer.MAX_VALUE; // 用一个较大的值代表无穷大
+            int[][] graph = {{0, 7, 9, INF, INF, 14},
+                    {7, 0, 10, 15, INF, INF},
+                    {9, 10, 0, 11, INF, 2},
+                    {INF, 15, 11, 0, 6, INF},
+                    {INF, INF, INF, 6, 0, 9},
+                    {14, INF, 2, INF, 9, 0}};
+            int src = 0;
+
+            // 输出从源点src到各个顶点的最短距离
+            int[] dist = dijkstra(graph, src);
+            for (int i = 0; i < dist.length; i++) {
+                System.out.println("Distance from " + src + " to " + i + " is " + dist[i]);
+            }
+        }
+
+        public static int[] dijkstra(int[][] graph, int src) {
+            int V = graph.length;
+            boolean[] visited = new boolean[V]; // 标记顶点是否已经访问
+            int[] dist = new int[V]; // 存储从源点src到各个顶点的最短距离
+
+            // 初始化dist数组
+            for (int i = 0; i < V; i++) {
+                dist[i] = Integer.MAX_VALUE;
+            }
+            dist[src] = 0; // 源点到自身的距离为0
+
+            // 计算最短路径
+            for (int count = 0; count < V - 1; count++) {
+                int u = getMinDistVertex(dist, visited);
+                visited[u] = true;
+                for (int v = 0; v < V; v++) {
+                    if (!visited[v] && graph[u][v] != Integer.MAX_VALUE && dist[u] != Integer.MAX_VALUE
+                            && dist[u] + graph[u][v] < dist[v]) {
+                        dist[v] = dist[u] + graph[u][v];
+                    }
+                }
+            }
+
+            return dist;
+        }
+
+        private static int getMinDistVertex(int[] dist, boolean[] visited) {
+            int V = dist.length;
+            int minDist = Integer.MAX_VALUE;
+            int minIndex = -1;
+            for (int v = 0; v < V; v++) {
+                if (!visited[v] && dist[v] < minDist) {
+                    minDist = dist[v];
+                    minIndex = v;
+                }
+            }
+            return minIndex;
+        }
+    }
 }

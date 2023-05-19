@@ -3,6 +3,7 @@ package cheetahgo.action.CustomerManagementAction;
 import cheetahgo.pageobjects.CustomerManagementPageObject.CooperativeManagementObject;
 import cheetahgo.pageobjects.CustomerManagementPageObject.CustomerManagementPageObject;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -28,7 +29,7 @@ public class CooperativeManagementAction {
         Thread.sleep(1000);
         return cooperativeManagementObject;
     }
-    
+
     /**
      * 内部运营平台-合作管理-筛选器自动化测试
      *
@@ -81,4 +82,28 @@ public class CooperativeManagementAction {
         Thread.sleep(3000);
 
     }
+
+    /**
+     * 内部运营平台-合作管理-新增合作记录自动化测试
+     *
+     * @param softAssert
+     * @param webDriver
+     */
+    public static void addCollaborationRecordAction(SoftAssert softAssert, WebDriver webDriver) throws Exception {
+        CooperativeManagementObject cooperativeManagementObject = openCooperativeManagement(webDriver, softAssert);
+        cooperativeManagementObject.addCollaborationRecord().click();
+        Thread.sleep(1000);
+        ((JavascriptExecutor) webDriver).executeScript("arguments[0].style.zIndex='999'", cooperativeManagementObject.sAPName());
+        // 在弹出框页面进行操作
+        SeleniumUtil.choiceSelect(cooperativeManagementObject.sAPName(), webDriver, "ant-select-dropdown-menu-item", "广州棒谷网络科技有限公司");
+        SeleniumUtil.choiceSelect(cooperativeManagementObject.customerType(), webDriver, "ant-select-dropdown-menu-item", "后付实消");
+        cooperativeManagementObject.totalAmount().sendKeys("100");
+        SeleniumUtil.choiceSelect(cooperativeManagementObject.accountingPeriodType(), webDriver, "ant-select-dropdown-menu-item", "充值");
+        cooperativeManagementObject.accountPeriod().sendKeys("10");
+        cooperativeManagementObject.contractTaxRateInRMB().sendKeys("100");
+        cooperativeManagementObject.sAPFormerName_Principal1().sendKeys("测试SAP曾用名");
+        Thread.sleep(3000);
+
+    }
 }
+
