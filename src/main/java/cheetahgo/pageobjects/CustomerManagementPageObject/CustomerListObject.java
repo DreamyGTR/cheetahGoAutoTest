@@ -3,7 +3,11 @@ package cheetahgo.pageobjects.CustomerManagementPageObject;
 import cheetahgo.constant.Constants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.springframework.transaction.annotation.Transactional;
 import util.PropertiesMapUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 内部运营平台客户管理-客户列表二级菜单页面元素封装类
@@ -228,6 +232,9 @@ public class CustomerListObject {
         return element;
     }
 
+    public static void main(String[] args) {
+
+    }
     //分配AM取消按钮
     public WebElement distributeAMCancel() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerList.distributeAMCancel"));
@@ -339,7 +346,10 @@ public class CustomerListObject {
     //编辑财务信息发票项目文本框
     public WebElement editFinancialInformationInvoiceItem() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.customerList.editFinancialInformationInvoiceItem"));
+        List list=new ArrayList();
+
         return element;
+
     }
 
     //编辑财务信息Account No文本框
@@ -390,4 +400,8 @@ public class CustomerListObject {
         return element;
     }
 
+    @Transactional
+    public void testT(){
+
+    }
 }

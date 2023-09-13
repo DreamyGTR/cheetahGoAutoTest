@@ -77,6 +77,7 @@ public class CustomerListAction {
         SeleniumUtil.actionMoveClickRelease(webDriver, "/html/body/div[2]/div/div[2]/div/section[2]/section/div/section/main/form/div/div[3]/div/div[2]/div/span/div/div/span[1]");
         Thread.sleep(500);
 
+
         //验证客户类型下拉框
         LogUtil.info("客户类型下拉框选择" + Constants.CustomerTypeSelect);
         SeleniumUtil.choiceSelect(accountListPageObject.customerTypeSelect(), webDriver, "ant-select-dropdown-menu-item", Constants.CustomerTypeSelect);

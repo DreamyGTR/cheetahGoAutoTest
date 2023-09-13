@@ -83,6 +83,16 @@ public class CooperativeManagementAction {
 
     }
 
+    public static void main(String[] args) {
+        int[] arr = new int[]{1, 1, 2, 2, 3, 3,3,3,3};
+        int err=0;
+        for (int i = 0; i < arr.length; i++) {
+            err=err^arr[i];
+        }
+        System.out.println(err);
+
+    }
+
     /**
      * 内部运营平台-合作管理-新增合作记录自动化测试
      *

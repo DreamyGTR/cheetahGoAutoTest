@@ -1,14 +1,18 @@
 package util;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.springframework.util.FileCopyUtils;
+import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SeleniumUtil {
     /**
@@ -62,6 +66,7 @@ public class SeleniumUtil {
         WaitUtil.sleep(300);
         action.release().perform();
         WaitUtil.sleep(300);
+        LambdaQueryWrapper queryWrapper = new LambdaQueryWrapper();
     }
 
     /**
@@ -233,8 +238,19 @@ public class SeleniumUtil {
         datePickersEndPath.sendKeys(endDate);
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void test1() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
 
+        List<Integer> l = list.stream().map((item) -> {
+            item += 1;
+            return item;
+        }).collect(Collectors.toList());
+
+        System.out.println(l);
     }
 
     /**
@@ -269,6 +285,12 @@ public class SeleniumUtil {
         }
         return originalHandle;
     }
+
+    public static void main(String[] args) {
+
+    }
+
+
 }
 
 

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import util.PropertiesMapUtil;
 
+import java.util.*;
+
 public class CooperativeManagementObject {
     private WebElement element = null;
     private PropertiesMapUtil objectMap = new PropertiesMapUtil(Constants.CooperativeManagement);
@@ -12,7 +14,7 @@ public class CooperativeManagementObject {
 
     public CooperativeManagementObject(WebDriver webDriver) throws Exception {
         this.webDriver = webDriver;
-    }
+    } 
 
     //联合搜索
     public WebElement federatedSearch() throws Exception {
@@ -53,7 +55,7 @@ public class CooperativeManagementObject {
     //合作开始时间
     public WebElement cooperationStartTime() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.CooperativeManagement.CooperationStartTime"));
-        return element;
+        return element; 
     }
 
     //合作开始时间开始时间
@@ -208,6 +210,22 @@ public class CooperativeManagementObject {
         return element;
     }
 
+    //测试GPT脚本
+
+    public static void main(String[] args) {
+        ArrayList list =new ArrayList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        Iterator iterator=list.iterator();
+        while (iterator.hasNext()) {
+            Object next =  iterator.next();
+            
+        }
+
+
+    }
+
     //下载
     public WebElement download() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.CooperativeManagement.Download"));
@@ -216,7 +234,7 @@ public class CooperativeManagementObject {
 
     //编辑合作记录
     public WebElement editCollaborationRecord() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.CooperativeManagement.EditCollaborationRecord"));
+        element = webDriver.findElement(objectMap .getLocator("cheetahGo.customerManagement.CooperativeManagement.EditCollaborationRecord"));
         return element;
     }
 

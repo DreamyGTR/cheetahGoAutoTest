@@ -114,6 +114,14 @@ public class AccountListFaceBookListObject {
         return element;
     }
 
+    public static void main(String[] args) {
+        int a=1;
+        int b=10;
+        System.out.println(a&b);
+        System.out.println(a|b);
+
+    }
+
     //编辑按钮
     public WebElement editButton() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.customerManagement.accountListFaceBookList.editButton"));
