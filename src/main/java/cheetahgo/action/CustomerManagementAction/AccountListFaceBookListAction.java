@@ -36,6 +36,7 @@ public class AccountListFaceBookListAction {
         customerManagementPageObject.customerBill().click();
         Thread.sleep(500);
         customerManagementPageObject.customerBillFaceBookList().click();
+        System.out.println("111");
         return accountBillFaceBookListObject;
     }
 //
