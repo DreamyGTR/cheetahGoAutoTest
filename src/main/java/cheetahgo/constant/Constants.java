@@ -57,4 +57,6 @@ public class Constants {
     //内部运营平台-客户管理-合作管理Properties文件路径
     public static final String CooperativeManagement = "D:\\gitTest\\cheetahGoAutoTest\\sshLinux\\cheetahGoAutoTest\\src\\main\\resources\\cheetahgo\\CooperativeManagement.properties";
 
+    public static final String AccountsReceivableLimitStatistics="D:\\cheetagho\\src\\main\\resources\\cheetahgo\\AccountsReceivableLimitStatistics.properties";
+
 }
