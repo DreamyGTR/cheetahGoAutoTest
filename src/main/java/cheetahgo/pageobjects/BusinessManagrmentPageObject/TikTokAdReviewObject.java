@@ -424,11 +424,6 @@ public class TikTokAdReviewObject {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.tikTokAdReview.historicalReviewViolationLevel"));
         return element;
     }
-    //历史审核-违规级别
-    public WebElement historicalReviewViolationLevel() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.tikTokAdReview.historicalReviewViolationLevel"));
-        return element;
-    }
     //历史审核-入库日期-开始
     public WebElement historicalReviewStorageDateStart() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.tikTokAdReview.historicalReviewStorageDateStart"));

@@ -585,7 +585,7 @@ public class TikTokViolationDetailsObject {
         return element;
     }
     //违规账户-操作-关停删除操作-删除当前广告系列
-    public WebElement violatingAccountOperationShutDownCurrentCampaign() throws Exception {
+    public WebElement violatingAccountOperationDeleteCurrentCampaign() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.tikTokViolationDetails.violatingAccountOperationShutDownCurrentCampaign"));
         return element;
     }
