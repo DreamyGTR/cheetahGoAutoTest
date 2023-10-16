@@ -38,11 +38,6 @@ public class FBBusinessMarketObject {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.fbBusinessMarket.illegalCreativityDateEnd"));
         return element;
     }
-    //违规创意-日期-结束
-    public WebElement illegalCreativityDateEnd() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.fbBusinessMarket.illegalCreativityDateEnd"));
-        return element;
-    }
     //违规创意-搜索
     public WebElement illegalCreativitySearch() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.fbBusinessMarket.illegalCreativitySearch"));
