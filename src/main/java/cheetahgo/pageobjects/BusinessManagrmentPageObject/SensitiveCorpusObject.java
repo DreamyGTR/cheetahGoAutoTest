@@ -124,7 +124,7 @@ public class SensitiveCorpusObject {
         return element;
     }
     //敏感网址-状态
-    public WebElement sensitiveURLApplicableMedia() throws Exception {
+    public WebElement sensitiveURLStatus() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.sensitiveCorpus.sensitiveURLApplicableMedia"));
         return element;
     }
