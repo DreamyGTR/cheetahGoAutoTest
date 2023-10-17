@@ -213,11 +213,6 @@ public class DetailedReportTwoObject {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.fbDetailedReportTwo.dimensionsAndMetricsSearchSelectAdGroupIDEqual"));
         return element;
     }
-    //详细报表-搜索条件-广告组ID-等于/不等于
-    public WebElement dimensionsAndMetricsSearchSelectAdGroupIDEqual() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.fbDetailedReportTwo.dimensionsAndMetricsSearchSelectAdGroupIDEqual"));
-        return element;
-    }
     //详细报表-搜索条件-广告组ID-输入ID
     public WebElement dimensionsAndMetricsSearchSelectAdGroupIDEnterID() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.fbDetailedReportTwo.dimensionsAndMetricsSearchSelectAdGroupIDEnterID"));
