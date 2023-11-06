@@ -15,47 +15,47 @@ public class FBBusinessMarketObject {
     }
     //消耗大盘-日期-开始
     public WebElement dateStart() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.fbBusinessMarket.dateStart"));
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.dateReport.fbBusinessMarket.dateStart"));
         return element;
     }
     //消耗大盘-日期-结束
     public WebElement dateEnd() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.fbBusinessMarket.dateEnd"));
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.dateReport.fbBusinessMarket.dateEnd"));
         return element;
     }
     //消耗大盘-搜索
     public WebElement search() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.fbBusinessMarket.Search"));
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.dateReport.fbBusinessMarket.Search"));
         return element;
     }
     //违规创意-日期-开始
     public WebElement illegalCreativityDateStart() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.fbBusinessMarket.illegalCreativityDateStart"));
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.dateReport.fbBusinessMarket.illegalCreativityDateStart"));
         return element;
     }
     //违规创意-日期-结束
     public WebElement illegalCreativityDateEnd() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.fbBusinessMarket.illegalCreativityDateEnd"));
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.dateReport.fbBusinessMarket.illegalCreativityDateEnd"));
         return element;
     }
     //违规创意-搜索
     public WebElement illegalCreativitySearch() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.fbBusinessMarket.illegalCreativitySearch"));
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.dateReport.fbBusinessMarket.illegalCreativitySearch"));
         return element;
     }
     //开户大盘-日期-开始
     public WebElement accountOpeningMarketDateStart() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.fbBusinessMarket.accountOpeningMarketDateStart"));
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.dateReport.fbBusinessMarket.accountOpeningMarketDateStart"));
         return element;
     }
     //开户大盘-日期-结束
     public WebElement accountOpeningMarketDateEnd() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.fbBusinessMarket.accountOpeningMarketDateEnd"));
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.dateReport.fbBusinessMarket.accountOpeningMarketDateEnd"));
         return element;
     }
     //开户大盘-搜索
     public WebElement accountOpeningMarketSearch() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.businessManagement.fbBusinessMarket.accountOpeningMarketSearch"));
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.dateReport.fbBusinessMarket.accountOpeningMarketSearch"));
         return element;
     }
 }
