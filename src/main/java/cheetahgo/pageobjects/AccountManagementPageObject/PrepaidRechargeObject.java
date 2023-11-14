@@ -514,8 +514,8 @@ public class PrepaidRechargeObject {
         return element;
     }
     //钱包明细-操作流水号
-    public WebElement walletDetailsOrderNumber() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.accountManagement.prepaidRecharge.walletDetailsOrderNumber"));
+    public WebElement walletDetailsOperationSerialNumber() throws Exception {
+        element = webDriver.findElement(objectMap.getLocator("cheetahGo.accountManagement.prepaidRecharge.walletDetailsOperationSerialNumber"));
         return element;
     }
     //钱包明细-子钱包类型
@@ -586,11 +586,6 @@ public class PrepaidRechargeObject {
     //到款待充值-认领时间-开始
     public WebElement rechargeAtHospitalityClaimTimeStart() throws Exception {
         element = webDriver.findElement(objectMap.getLocator("cheetahGo.accountManagement.prepaidRecharge.rechargeAtHospitalityClaimTimeStart"));
-        return element;
-    }
-    //到款待充值-认领时间-结束
-    public WebElement rechargeAtHospitalityClaimTimeEnd() throws Exception {
-        element = webDriver.findElement(objectMap.getLocator("cheetahGo.accountManagement.prepaidRecharge.rechargeAtHospitalityClaimTimeEnd"));
         return element;
     }
     //到款待充值-认领时间-结束
